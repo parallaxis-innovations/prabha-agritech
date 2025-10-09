@@ -30,7 +30,7 @@ export default function Navbar() {
                     : 'bg-transparent py-6'
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+            <div className="mx-20 px-6 lg:px-12 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className={`text-2xl font-playfair font-bold tracking-tight transition-colors ${scrolled ? 'text-earth-green' : 'text-white'
