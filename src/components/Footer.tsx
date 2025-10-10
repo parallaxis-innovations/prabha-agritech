@@ -39,7 +39,7 @@ export default function Footer() {
 							📍 Ajmer & Bhilwara, Rajasthan
 						</p>
 					</div>
-
+ 
 					{/* Company Links */}
 					<div>
 						<h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-sunrise-gold">
