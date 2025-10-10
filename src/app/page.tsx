@@ -11,7 +11,7 @@ export default function Home() {
       tagline: 'Farming the Future of Nutritional Protein',
       description: 'Advanced mushroom cultivation, R&D, and comprehensive training programs.',
       icon: <span className="text-2xl">🍄</span>,
-      image: 'https://images.unsplash.com/photo-1602529673808-b31a6e5e8f9f?w=800&q=80',
+      image: 'https://media.istockphoto.com/id/1396681773/photo/converging-lines-of-rows-of-shitake-mushrooms-growing-in-indoor-farm.webp?a=1&b=1&s=612x612&w=0&k=20&c=npF75rRzQzRpGf3fq9hKdkcoVFTj1KqalUCme9N3AJA=',
       href: '/services#shroom'
     },
     {
@@ -19,7 +19,7 @@ export default function Home() {
       tagline: 'The Buzz Behind Sustainability',
       description: 'Honeybee farming, pure honey production, and pollination services for healthier ecosystems.',
       icon: <span className="text-2xl">🐝</span>,
-      image: 'https://images.unsplash.com/photo-1587049352846-4a222e784acc?w=800&q=80',
+      image: 'https://media.istockphoto.com/id/1294583580/photo/beekeeper-working-collect-honey.webp?a=1&b=1&s=612x612&w=0&k=20&c=2khGBBAqRdBbE611QHeYR0_wo1qf1kLZ80gVlCDOgdY=',
       href: '/services#hive'
     },
     {
