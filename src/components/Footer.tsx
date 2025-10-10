@@ -19,7 +19,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-dark text-white">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+            <div className="lg:mx-20 mx-6 px-6 lg:px-12 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div>
