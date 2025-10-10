@@ -1,5 +1,7 @@
 "use client";
 import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
+import { Send } from 'lucide-react';
 
 type FormData = {
     name: string;
@@ -10,57 +12,156 @@ type FormData = {
 };
 
 export default function ContactForm() {
-    const { register, handleSubmit, formState } = useForm<FormData>({ mode: 'onTouched' });
+    const { register, handleSubmit, formState, reset } = useForm<FormData>({ mode: 'onTouched' });
     const { errors, isSubmitting, isSubmitSuccessful } = formState;
 
     async function onSubmit(data: FormData) {
-        // Mock submit
-        await new Promise((r) => setTimeout(r, 700));
-        console.log('Contact submit', data);
+        try {
+            const response = await fetch('/api/send-mail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
+
+            const result = await response.json();
+            console.log('Success:', result);
+            reset();
+        } catch (error) {
+            console.error('Error:', error);
+            // You might want to show an error message to the user here
+        }
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Name & Phone */}
             <div>
-                <label className="text-sm font-medium">Name</label>
-                <input {...register('name', { required: true })} className="mt-1 block w-full rounded border px-3 py-2" />
-                {errors.name && <p className="text-xs text-red-600">Name is required</p>}
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Full Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                    {...register('name', { required: 'Name is required' })}
+                    placeholder="John Doe"
+                    className={`w-full px-4 py-3 rounded-xl border ${errors.name ? 'border-red-300 bg-red-50' : 'border-slate-200'} focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all`}
+                />
+                {errors.name && (
+                    <p className="text-xs text-red-600 mt-1">{errors.name.message}</p>
+                )}
             </div>
 
             <div>
-                <label className="text-sm font-medium">Phone</label>
-                <input {...register('phone', { required: true })} className="mt-1 block w-full rounded border px-3 py-2" />
-                {errors.phone && <p className="text-xs text-red-600">Phone is required</p>}
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Phone Number <span className="text-red-500">*</span>
+                </label>
+                <input
+                    {...register('phone', {
+                        required: 'Phone number is required',
+                        pattern: {
+                            value: /^[0-9]{10}$/,
+                            message: 'Please enter a valid 10-digit phone number'
+                        }
+                    })}
+                    placeholder="+91 XXXXX XXXXX"
+                    className={`w-full px-4 py-3 rounded-xl border ${errors.phone ? 'border-red-300 bg-red-50' : 'border-slate-200'} focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all`}
+                />
+                {errors.phone && (
+                    <p className="text-xs text-red-600 mt-1">{errors.phone.message}</p>
+                )}
             </div>
 
-            <div className="md:col-span-2">
-                <label className="text-sm font-medium">Email</label>
-                <input {...register('email', { required: true })} className="mt-1 block w-full rounded border px-3 py-2" />
-                {errors.email && <p className="text-xs text-red-600">Email is required</p>}
-            </div>
 
+            {/* Email */}
             <div>
-                <label className="text-sm font-medium">Inquiry Type</label>
-                <select {...register('inquiry')} className="mt-1 block w-full rounded border px-3 py-2">
-                    <option>Farmer</option>
-                    <option>Entrepreneur</option>
-                    <option>Institution</option>
-                    <option>Investor</option>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Email Address <span className="text-red-500">*</span>
+                </label>
+                <input
+                    {...register('email', {
+                        required: 'Email is required',
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: 'Please enter a valid email address'
+                        }
+                    })}
+                    type="email"
+                    placeholder="john@example.com"
+                    className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-300 bg-red-50' : 'border-slate-200'} focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all`}
+                />
+                {errors.email && (
+                    <p className="text-xs text-red-600 mt-1">{errors.email.message}</p>
+                )}
+            </div>
+
+            {/* Inquiry Type */}
+            <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                    I am a...
+                </label>
+                <select
+                    {...register('inquiry')}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all bg-white"
+                >
+                    <option value="farmer">Farmer</option>
+                    <option value="entrepreneur">Entrepreneur</option>
+                    <option value="institution">Institution / NGO</option>
+                    <option value="investor">Investor</option>
+                    <option value="student">Student / Researcher</option>
+                    <option value="other">Other</option>
                 </select>
             </div>
 
-            <div className="md:col-span-2">
-                <label className="text-sm font-medium">Message</label>
-                <textarea {...register('message')} className="mt-1 block w-full rounded border px-3 py-2 h-28" />
+            {/* Message */}
+            <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Your Message
+                </label>
+                <textarea
+                    {...register('message')}
+                    placeholder="Tell us about your inquiry or how we can help..."
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all resize-none"
+                />
             </div>
 
-            <div className="md:col-span-2 flex items-center justify-end">
-                <button type="submit" disabled={isSubmitting} className="px-5 py-2 bg-primary text-white rounded">
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+            {/* Submit Button */}
+            <div className="flex items-center justify-between pt-4">
+                {isSubmitSuccessful && (
+                    <motion.p
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="text-sm text-green-600 font-medium"
+                    >
+                        ✓ Message sent! We'll get back to you soon.
+                    </motion.p>
+                )}
+
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="ml-auto px-8 py-3 bg-earth-green text-white rounded-full font-medium hover:bg-sunrise-gold hover:text-dark transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center gap-2"
+                >
+                    {isSubmitting ? (
+                        <>
+                            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            Sending...
+                        </>
+                    ) : (
+                        <>
+                            Send Message
+                            <Send className="w-4 h-4" />
+                        </>
+                    )}
                 </button>
             </div>
-
-            {isSubmitSuccessful && <p className="text-sm text-green-600 md:col-span-2">Thank you — we will get back to you soon.</p>}
         </form>
     );
 }
