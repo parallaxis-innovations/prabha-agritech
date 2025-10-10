@@ -14,9 +14,10 @@ module.exports = {
         'dark': '#2e2e2e',
         'light': '#fafaf8',
       },
-      fontFamily: {
-        'playfair': ['var(--font-playfair)', 'serif'],
-        'inter': ['var(--font-inter)', 'sans-serif'],
+        fontFamily: {
+          'playfair': ['var(--font-playfair)', 'serif'],
+          'inter': ['var(--font-inter)', 'sans-serif'],
+          sans: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
       },
     },
   },
