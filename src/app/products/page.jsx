@@ -58,7 +58,7 @@ const ProductsPage = () => {
 			</section>
 
 			{/* Products Grid */}
-			<section className="py-16 px-4 mt-10 max-w-7xl mx-auto">
+			<section className="py-16 px-4 mt-10 container mx-auto">
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 					{products.map((product) => {
 						const slug = product.title.toLowerCase().replace(/ /g, "-").replace(/&/g, "and");
@@ -93,7 +93,7 @@ const ProductsPage = () => {
 				</div>
 
                 {/* Newsletter/CTA Section */}
-			<section className="py-16 px-4 max-w-7xl mx-auto mb-16 mt-10">
+			<section className="py-16 px-4 container mx-auto  mt-10">
 				<div
 					className="relative rounded-3xl overflow-hidden shadow-2xl"
 					style={{ minHeight: 400 }}

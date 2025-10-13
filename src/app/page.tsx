@@ -56,11 +56,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-light">
+    <div className="bg-light min-h-screen">
       <HeroSection />
 
       {/* Intro Section */}
-      <section className="py-20 px-6 lg:px-12 bg-cream">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-12 bg-cream">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,10 +68,10 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-dark mb-6">
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">
             Technology Meets Tradition
           </h2>
-          <p className="text-slate-700 text-lg leading-relaxed">
+          <p className="text-slate-700 text-base sm:text-lg leading-relaxed px-4 sm:px-0">
             PRABHA is where innovation meets heritage. We empower Indian farmers with sustainable systems that
             honor traditional knowledge while embracing cutting-edge agritech—creating pathways to prosperity,
             food security, and climate resilience.
@@ -80,21 +80,21 @@ export default function Home() {
       </section>
 
       {/* Key Divisions Section */}
-      <section className="py-20 px-6 lg:px-12">
-        <div className="mx-20">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-12">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <p className="text-sunrise-gold text-sm uppercase tracking-widest mb-3">Our Ecosystem</p>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-dark">
+            <p className="text-sunrise-gold text-xs sm:text-sm uppercase tracking-widest mb-3">Our Ecosystem</p>
+            <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-dark leading-tight">
               Five Pillars of Innovation
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {divisions.map((division, idx) => (
               <ServiceCard key={division.title} {...division} delay={idx * 0.1} />
             ))}
@@ -103,23 +103,23 @@ export default function Home() {
       </section>
 
       {/* Impact Metrics */}
-      <section className="py-20 px-6 lg:px-12 bg-earth-green text-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 xl:px-0 bg-earth-green text-white">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Impact in Numbers
             </h2>
-            <p className="text-white/80 text-lg">
+            <p className="text-white/80 text-base sm:text-lg px-4 sm:px-0">
               Real results, measurable change across communities
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, idx) => (
               <motion.div
                 key={stat.label}
@@ -127,12 +127,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="text-center"
+                className="text-center px-2"
               >
-                <div className="text-5xl md:text-6xl font-bold font-playfair text-sunrise-gold mb-2">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair text-sunrise-gold mb-2 leading-none">
                   {stat.value}
                 </div>
-                <div className="text-white/90 text-sm uppercase tracking-wide">
+                <div className="text-white/90 text-xs sm:text-sm uppercase tracking-wide px-1">
                   {stat.label}
                 </div>
               </motion.div>
@@ -142,24 +142,24 @@ export default function Home() {
       </section>
 
       {/* Testimonial / CTA Section */}
-      <section className="py-24 px-6 lg:px-12 bg-cream">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-12 bg-cream">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-dark mb-8">
-            Join India's Sustainable <br className="hidden md:block" />
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-6 sm:mb-8 leading-tight">
+            Join India's Sustainable <br className="hidden sm:inline md:block lg:inline" />
             Farming Revolution
           </h2>
-          <p className="text-slate-700 text-lg mb-10 leading-relaxed">
+          <p className="text-slate-700 text-base sm:text-lg mb-6 sm:mb-10 leading-relaxed px-4 sm:px-0">
             Whether you're a farmer, entrepreneur, or institution—let's build a future
             where agriculture is profitable, respected, and regenerative.
           </p>
           <Link
             href="/contact"
-            className="inline-block px-10 py-4 bg-earth-green text-white rounded-full font-medium hover:bg-dark transition-all duration-300 hover:scale-105 shadow-lg"
+            className="inline-block px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-earth-green text-white rounded-full font-medium text-sm sm:text-base hover:bg-dark transition-all duration-300 hover:scale-105 shadow-lg"
           >
             Start Your Journey
           </Link>

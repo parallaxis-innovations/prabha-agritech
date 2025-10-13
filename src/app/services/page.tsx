@@ -75,7 +75,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Services Content */}
-            <div className="lg:mx-20 mx-6 px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Our Services</h2>
                     <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-600">

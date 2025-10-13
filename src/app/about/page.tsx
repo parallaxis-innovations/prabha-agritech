@@ -85,7 +85,7 @@ export default function AboutPage() {
 
             {/* Story Section - Split Layout */}
             <div className="py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -133,9 +133,8 @@ export default function AboutPage() {
                 </div>
             </div>
 
-            {/* Vision & Mission - Dual Cards */}
             <div className="py-24 bg-gradient-to-b from-slate-50 to-white">
-                <div className="max-w-6xl mx-auto px-6">
+                <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 xl:px-0">
                     <div
                         className="grid md:grid-cols-2 gap-8"
 
