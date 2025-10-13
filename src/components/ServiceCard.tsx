@@ -41,9 +41,9 @@ export default function ServiceCard({
                     />
 
                     {/* Icon Overlay */}
-                    <div className="absolute top-6 left-6 w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full text-white transition-all duration-300 group-hover:bg-sunrise-gold group-hover:text-dark">
+                    {/* <div className="absolute top-6 left-6 w-12 h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full text-white transition-all duration-300 group-hover:bg-sunrise-gold group-hover:text-dark">
                         {icon}
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Content */}
