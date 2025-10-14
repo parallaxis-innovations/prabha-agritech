@@ -17,7 +17,7 @@ export default function HeroSection() {
             </div>
 
             {/* Content Overlay */}
-            <div className="relative z-10 h-full flex items-center justify-center">
+            <div className="relative z-10 h-full flex items-center justify-center mt-14 lg:mt-0">
                 <div className="max-w-5xl mx-auto px-6 lg:px-12 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
