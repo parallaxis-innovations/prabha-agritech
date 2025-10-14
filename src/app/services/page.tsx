@@ -14,7 +14,7 @@ const services = [
         desc: 'Advanced mushroom cultivation, R&D, and comprehensive training programs.',
         tagline: 'Growing nutrition, farming the future of nutritional protein',
         features: ['Mushroom Cultivation', 'R&D Programs', 'Training Workshops', 'Quality Control'],
-        image: '/image/services/mushroom.jpeg',
+        image: '/image/services/mushroom.png',
     },
     {
         id: 'prabha-hive',
@@ -22,7 +22,7 @@ const services = [
         desc: 'Expert beekeeping services, pure honey production, and pollination solutions.',
         tagline: "Sweetening nature's work, the buzz behind sustainability",
         features: ['Beekeeping Services', 'Pure Honey Production', 'Pollination Services', 'Colony Management'],
-        image: '/image/services/beekeeping.jpeg',
+        image: '/image/services/honeyfarming.png',
     },
     {
         id: 'prabha-fresh',
@@ -30,7 +30,7 @@ const services = [
         desc: 'Premium hydroponic produce with indoor/outdoor farm setup solutions.',
         tagline: 'From water to wellness, pure fresh smartly grown',
         features: ['Hydroponic Systems', 'Clean Produce', 'Farm Setup', 'Retail Solutions'],
-        image: '/image/services/hydroponics.jpeg',
+        image: '/image/services/hydroponics.png',
     },
     {
         id: 'prabha-learn',
@@ -38,7 +38,7 @@ const services = [
         desc: 'Comprehensive agricultural training and consultancy hub.',
         tagline: "Training India's next agri-leaders",
         features: ['Workshops', 'R&D Programs', 'Consultancy', 'Agritech Training'],
-        image: '/image/services/training.jpeg',
+        image: '/image/services/training.png',
     },
     {
         id: 'prabha-technovation',
@@ -46,7 +46,7 @@ const services = [
         desc: 'Advanced farm design and technology integration services.',
         tagline: 'Designing farms for tomorrow',
         features: ['Greenhouse Design', 'IoT Solutions', 'Automation Systems', 'Infrastructure Setup'],
-        image: '/image/services/technology.jpeg',
+        image: '/image/services/technology.png',
     },
 ];
 
