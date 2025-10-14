@@ -1,13 +1,21 @@
-import { productData } from '../../data/productsData';
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
+import { productData } from "../../data/productsData";
+import { notFound } from "next/navigation";
+import Image from "next/image";
 
-export default function SubProductPage({ params }) {
-  const { slug, "slug-2": subProductSlug } = params;
+// Helper function to convert kebab-case to camelCase
+function kebabToCamel(str) {
+  return str.replace(/-./g, (match) => match.charAt(1).toUpperCase());
+}
+
+export default async function SubProductPage({ params }) {
+  const { slug, "slug-2": subProductSlug } = await params;
+
+  // Remove -solutions suffix first, then convert to camelCase
+  const cleanedSlug = slug.replace(/-solutions$/, "");
+  const camelCaseKey = kebabToCamel(cleanedSlug);
   
-  // Get the main product category dynamically using slug
-  const productCategory = productData.greenhouse;
-  console.log(productData);
+  const productCategory = productData[camelCaseKey];
+  
   if (!productCategory) return notFound();
 
   // Find the specific subproduct
@@ -69,18 +77,35 @@ export default function SubProductPage({ params }) {
           {subProduct.content.map((section, index) => (
             <div key={index} className="border-b border-gray-200 pb-8">
               <h3 className="text-2xl font-bold mb-4">{section.heading}</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {section.text}
-              </p>
+
+              <div className="space-y-4">
+                {Array.isArray(section.text) ? (
+                  section.text.map((para, i) => (
+                    <p
+                      key={i}
+                      className="text-lg text-gray-700 leading-relaxed"
+                    >
+                      {para}
+                    </p>
+                  ))
+                ) : (
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {section.text}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>
 
         {/* Contact CTA */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-4">Interested in this solution?</h3>
+          <h3 className="text-2xl font-bold mb-4">
+            Interested in this solution?
+          </h3>
           <p className="text-lg text-gray-700 mb-6">
-            Contact us to learn more about how we can help you implement this solution.
+            Contact us to learn more about how we can help you implement this
+            solution.
           </p>
           <a
             href="/contact"
@@ -93,4 +118,3 @@ export default function SubProductPage({ params }) {
     </main>
   );
 }
-

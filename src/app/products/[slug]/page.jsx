@@ -2,9 +2,19 @@ import { notFound } from "next/navigation";
 import { productData } from "../data/productsData";
 import Link from "next/link";
 
-export default function ProductDetail({ params }) {
-  const { slug } = params;
-  const category = productData[slug.replace(/-solutions$/, "")]; // Handle "greenhouse-solutions" -> "greenhouse"
+// Helper function to convert kebab-case to camelCase
+function kebabToCamel(str) {
+  return str.replace(/-./g, (match) => match.charAt(1).toUpperCase());
+}
+
+export default async function ProductDetail({ params }) {
+  const { slug } = await params;
+  
+  // Remove -solutions suffix first, then convert to camelCase
+  const cleanedSlug = slug.replace(/-solutions$/, "");
+  const camelCaseKey = kebabToCamel(cleanedSlug);
+  
+  const category = productData[camelCaseKey];
 
   if (!category) return notFound();
 
@@ -28,7 +38,6 @@ export default function ProductDetail({ params }) {
         </div>
       </section>
 
-      {/* Sub-Products Grid */}
       <section className="py-16 px-4 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {subProducts.map((subProduct) => (
