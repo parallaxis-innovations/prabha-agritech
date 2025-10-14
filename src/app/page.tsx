@@ -1,6 +1,7 @@
 "use client";
 import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
+import Envestment from '../components/Envestment';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -77,6 +78,10 @@ export default function Home() {
             food security, and climate resilience.
           </p>
         </motion.div>
+      </section>
+
+      <section>
+        <Envestment />
       </section>
 
       {/* Key Divisions Section */}
