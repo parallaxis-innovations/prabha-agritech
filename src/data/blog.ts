@@ -1,3 +1,4 @@
+// data/blog.ts
 export interface BlogPost {
     slug: string;
     title: string;
@@ -17,7 +18,7 @@ export const blogPosts: BlogPost[] = [
         slug: 'sustainable-farming-techniques',
         title: 'Sustainable Farming Techniques for Modern Agriculture',
         excerpt: 'Exploring innovative methods to enhance productivity while preserving the environment for future generations.',
-        category: 'Sustainability',
+        category: 'Sustainability & Social Impact',
         date: 'October 10, 2025',
         author: 'Dr. Rajesh Kumar',
         authorImage: '/image/profile.png',
@@ -50,7 +51,7 @@ export const blogPosts: BlogPost[] = [
         slug: 'mushroom-cultivation-guide',
         title: 'Complete Guide to Mushroom Cultivation',
         excerpt: 'From substrate preparation to harvest, learn the essential steps for successful mushroom farming.',
-        category: 'Mushroom Farming',
+        category: 'Farming & Cultivation',
         date: 'October 5, 2025',
         author: 'Priya Sharma',
         authorImage: '/image/profile.png',
@@ -83,7 +84,7 @@ export const blogPosts: BlogPost[] = [
         slug: 'technology-in-farming',
         title: 'Empowering Farmers with Technology',
         excerpt: 'How modern tools, IoT sensors, and apps are transforming traditional farming practices across India.',
-        category: 'Technology',
+        category: 'Technology & Innovation in Agriculture',
         date: 'September 28, 2025',
         author: 'Amit Patel',
         authorImage: '/image/profile.png',
@@ -113,10 +114,10 @@ export const blogPosts: BlogPost[] = [
         tags: ['AgriTech', 'Smart Farming', 'IoT', 'Precision Agriculture', 'Digital Agriculture'],
     },
     {
-        slug: 'beekeeping-benefits',
-        title: 'The Economic and Environmental Benefits of Beekeeping',
-        excerpt: 'Discover how beekeeping supports biodiversity, crop pollination, and provides sustainable income.',
-        category: 'Beekeeping',
+        slug: 'beekeeping-business-guide',
+        title: 'Starting a Profitable Beekeeping Business',
+        excerpt: 'A comprehensive guide to launching and scaling your beekeeping enterprise for sustainable income.',
+        category: 'Agribusiness & Entrepreneurship',
         date: 'September 20, 2025',
         author: 'Sunita Desai',
         authorImage: '/image/profile.png',
@@ -124,90 +125,151 @@ export const blogPosts: BlogPost[] = [
         readTime: '7 min read',
         content: `
                 <h2>The Sweet Business of Beekeeping</h2>
-                <p>Beekeeping offers farmers a unique opportunity to diversify income while contributing to environmental sustainability. Beyond honey production, bees play a crucial role in pollinating crops and maintaining ecosystem health.</p>
+                <p>Beekeeping offers entrepreneurs a unique opportunity to build a profitable business while contributing to environmental sustainability. Beyond honey production, bees play a crucial role in pollinating crops and maintaining ecosystem health.</p>
                 
-                <h2>Economic Benefits</h2>
-                <p>A well-managed beekeeping operation can generate significant revenue through honey, beeswax, royal jelly, and pollination services. With relatively low startup costs, beekeeping is accessible to small-scale farmers and can complement existing agricultural activities.</p>
+                <h2>Economic Opportunities</h2>
+                <p>A well-managed beekeeping operation can generate significant revenue through honey, beeswax, royal jelly, and pollination services. With relatively low startup costs, beekeeping is accessible to aspiring agripreneurs and can complement existing agricultural activities.</p>
                 
-                <h3>Pollination Services</h3>
-                <p>Farmers can increase crop yields by 20-30% through effective pollination. Many commercial farmers rent bee colonies during flowering season, creating an additional income stream for beekeepers.</p>
+                <h3>Revenue Streams</h3>
+                <p>Successful beekeeping businesses diversify income through multiple channels: raw honey sales, value-added products like creamed honey and honey-based cosmetics, pollination services for farms, and bee colony sales to new beekeepers.</p>
                 
-                <h2>Environmental Impact</h2>
-                <p>Bees are essential pollinators for over 75% of flowering plants and 35% of global food crops. By maintaining healthy bee populations, beekeepers contribute to biodiversity conservation and food security.</p>
+                <h2>Market Analysis and Pricing</h2>
+                <p>The organic honey market is growing at 15% annually, with premium varieties commanding prices 3-5 times higher than conventional honey. Understanding market demand and positioning your products strategically is key to profitability.</p>
                 
-                <h2>Getting Started</h2>
-                <p>Starting a beekeeping venture requires proper training, equipment, and knowledge of bee behavior. PRABHA's beekeeping program provides comprehensive training and ongoing support for aspiring beekeepers.</p>
+                <h2>Scaling Your Operation</h2>
+                <p>Start with 10-20 hives and gradually expand based on market demand and management capacity. Invest in proper equipment, training, and quality control systems to ensure consistent product quality and customer satisfaction.</p>
+                
+                <h2>Business Planning Essentials</h2>
+                <p>Develop a comprehensive business plan covering startup costs, operational expenses, marketing strategy, and financial projections. PRABHA's entrepreneurship program provides mentorship and resources for launching successful agribusiness ventures.</p>
             `,
-        tags: ['Beekeeping', 'Pollination', 'Sustainable Income', 'Biodiversity'],
+        tags: ['Beekeeping', 'Agribusiness', 'Entrepreneurship', 'Sustainable Income'],
     },
     {
-        slug: 'hydroponics-revolution',
-        title: 'Hydroponics: The Future of Urban Farming',
-        excerpt: 'Learn how soil-less farming is revolutionizing agriculture in cities and water-scarce regions.',
-        category: 'Hydroponics',
+        slug: 'rooftop-gardening-guide',
+        title: 'Transform Your Rooftop into a Productive Garden',
+        excerpt: 'Learn how to create thriving gardens in urban spaces with limited area and resources.',
+        category: 'Urban Farming & Gardening',
         date: 'September 15, 2025',
         author: 'Vikram Singh',
         authorImage: '/image/profile.png',
         image: '/image/blog/hydroponics.avif',
         readTime: '6 min read',
         content: `
-                <h2>What is Hydroponics?</h2>
-                <p>Hydroponics is a method of growing plants without soil, using mineral nutrient solutions in water. This innovative approach offers numerous advantages, particularly in urban environments and regions facing water scarcity.</p>
+                <h2>The Urban Farming Revolution</h2>
+                <p>Rooftop gardening is transforming city landscapes, providing fresh produce, reducing urban heat islands, and connecting people with nature. With proper planning, even small rooftop spaces can produce substantial yields.</p>
                 
-                <h2>Advantages of Hydroponic Systems</h2>
-                <p>Hydroponic farming uses 90% less water than traditional agriculture, requires minimal space, and produces higher yields. Plants grow faster due to optimized nutrient delivery and controlled environmental conditions.</p>
+                <h2>Getting Started with Rooftop Gardens</h2>
+                <p>Before starting, assess your rooftop's load-bearing capacity, sun exposure, and water access. Choose appropriate growing systems: container gardens for flexibility, raised beds for larger spaces, or hydroponic systems for intensive production.</p>
                 
-                <h3>Types of Hydroponic Systems</h3>
-                <p>Common systems include Deep Water Culture, Nutrient Film Technique, Drip Systems, and Aeroponics. Each system has unique advantages suited to different crops and growing environments.</p>
+                <h3>Best Crops for Urban Gardens</h3>
+                <p>Focus on high-value, space-efficient crops like leafy greens, herbs, cherry tomatoes, and peppers. These crops grow well in containers and provide quick returns on your investment of time and resources.</p>
                 
-                <h2>Urban Agriculture Applications</h2>
-                <p>Hydroponics enables year-round production in urban settings, reducing transportation costs and carbon footprint. Rooftop gardens and vertical farms are transforming cities into food production centers.</p>
+                <h2>Soil and Growing Media</h2>
+                <p>Use lightweight growing media specifically designed for rooftop gardens. Mix coco peat, vermicompost, and perlite for excellent drainage and nutrition. Avoid heavy garden soil which can stress building structures.</p>
                 
-                <h2>Challenges and Solutions</h2>
-                <p>Initial setup costs and technical knowledge requirements can be barriers. However, PRABHA provides training programs and affordable system designs to make hydroponics accessible to all farmers.</p>
+                <h2>Water Management</h2>
+                <p>Install drip irrigation systems to conserve water and ensure consistent moisture. Collect rainwater for sustainable irrigation and reduce dependence on municipal water supplies.</p>
+                
+                <h2>Community Impact</h2>
+                <p>Rooftop gardens create green spaces, improve air quality, and foster community connections. Share your harvest with neighbors and inspire others to start their own urban farming projects.</p>
             `,
-        tags: ['Hydroponics', 'Urban Farming', 'Water Conservation', 'Vertical Farming'],
+        tags: ['Urban Farming', 'Rooftop Gardening', 'Container Gardening', 'City Agriculture'],
     },
     {
-        slug: 'market-trends-2025',
-        title: 'Agricultural Market Trends in 2025',
-        excerpt: 'Analyzing current market dynamics, pricing patterns, and emerging opportunities for farmers.',
-        category: 'Market Analysis',
+        slug: 'farmer-success-story',
+        title: 'From Traditional to Tech: A Farmer\'s Transformation Journey',
+        excerpt: 'How one farmer increased yields by 300% through sustainable practices and modern technology.',
+        category: 'Stories & Inspirations',
         date: 'September 8, 2025',
         author: 'Meera Nair',
         authorImage: '/image/profile.png',
         image: '/image/blog/market-trends.webp',
-        readTime: '10 min read',
+        readTime: '8 min read',
         content: `
-                <h2>Overview of 2025 Agricultural Markets</h2>
-                <p>The agricultural sector in 2025 is experiencing significant transformations driven by technology adoption, climate change impacts, and shifting consumer preferences toward organic and sustainable products.</p>
+                <h2>Meet Ramesh: A Pioneer in Modern Farming</h2>
+                <p>Ramesh Kumar's story is one of resilience, innovation, and transformation. Five years ago, he struggled with declining yields and mounting debts on his 5-acre farm in Maharashtra. Today, he's a role model for sustainable farming in his region.</p>
                 
-                <h2>Key Market Trends</h2>
-                <p>Organic produce continues to command premium prices, with demand outpacing supply. Exotic vegetables and specialty crops are gaining traction in urban markets, offering higher profit margins for farmers.</p>
+                <h2>The Turning Point</h2>
+                <p>Everything changed when Ramesh attended a PRABHA training program on integrated farming systems. He learned about soil health management, drip irrigation, and crop diversification strategies that would revolutionize his approach to farming.</p>
                 
-                <h3>Technology Integration</h3>
-                <p>Digital platforms connecting farmers directly with consumers are disrupting traditional supply chains. E-commerce and farm-to-table movements are creating new market opportunities.</p>
+                <h3>Implementing Change</h3>
+                <p>Ramesh started small, dedicating one acre to test new methods. He installed a drip irrigation system, practiced crop rotation with legumes, and adopted organic pest management. The results were immediate and impressive.</p>
                 
-                <h2>Price Dynamics</h2>
-                <p>Commodity prices remain volatile due to climate uncertainties and global supply chain disruptions. Diversification and value-added processing are key strategies for risk management.</p>
+                <h2>The Numbers Tell the Story</h2>
+                <p>Within two years, Ramesh's yields increased by 300% while reducing water usage by 60% and chemical inputs by 80%. His annual income grew from ₹2 lakhs to ₹8 lakhs, completely transforming his family's financial situation.</p>
                 
-                <h2>Emerging Opportunities</h2>
-                <p>Export markets for organic products, agro-tourism, and carbon credit programs offer new revenue streams. Government initiatives supporting sustainable agriculture are creating favorable conditions for forward-thinking farmers.</p>
+                <h2>Giving Back to the Community</h2>
+                <p>Today, Ramesh mentors other farmers in his village, sharing his knowledge and experience. He's proof that with the right guidance and willingness to adapt, traditional farming can evolve into a profitable, sustainable enterprise.</p>
                 
-                <h2>Strategic Recommendations</h2>
-                <p>Farmers should focus on quality over quantity, embrace certification programs, and leverage digital platforms for market access. PRABHA provides market intelligence and training to help farmers capitalize on emerging trends.</p>
+                <h2>Key Lessons Learned</h2>
+                <p>Ramesh emphasizes the importance of continuous learning, starting small with new methods, and seeking expert guidance. His journey inspires farmers across India to embrace innovation while respecting traditional wisdom.</p>
             `,
-        tags: ['Market Analysis', 'Agricultural Economics', 'Pricing Trends', 'Market Opportunities'],
+        tags: ['Success Stories', 'Farmer Inspiration', 'Sustainable Agriculture', 'Innovation'],
+    },
+    {
+        slug: 'organic-farming-business',
+        title: 'Building a Profitable Organic Farming Business',
+        excerpt: 'Strategic insights on certification, marketing, and scaling your organic agriculture venture.',
+        category: 'Agribusiness & Entrepreneurship',
+        date: 'October 12, 2025',
+        author: 'Anjali Verma',
+        authorImage: '/image/profile.png',
+        image: '/image/blog/sustainable-farming.jpg',
+        readTime: '9 min read',
+        content: `
+                <h2>The Organic Market Opportunity</h2>
+                <p>The organic food market in India is growing at 25% annually, driven by health-conscious consumers willing to pay premium prices. This presents a golden opportunity for farmers ready to transition to organic methods.</p>
+                
+                <h2>Certification Process</h2>
+                <p>Obtaining organic certification requires a 3-year transition period and adherence to strict standards. Plan ahead, maintain detailed records, and work with certifying agencies to navigate the process smoothly.</p>
+                
+                <h3>Building Your Brand</h3>
+                <p>Successful organic farmers don't just grow crops—they build brands. Develop a compelling story, create attractive packaging, and establish direct connections with consumers through farmers' markets and online platforms.</p>
+                
+                <h2>Premium Pricing Strategies</h2>
+                <p>Organic produce commands 30-50% higher prices than conventional alternatives. Educate customers about your farming practices, emphasize quality and nutritional benefits, and build loyalty through consistent excellence.</p>
+                
+                <h2>Distribution Channels</h2>
+                <p>Explore multiple distribution options: direct-to-consumer sales, subscription boxes, partnerships with organic stores, and exports. Diversification reduces risk and maximizes market reach.</p>
+            `,
+        tags: ['Organic Farming', 'Agribusiness', 'Certification', 'Marketing Strategy'],
+    },
+    {
+        slug: 'vertical-farming-innovation',
+        title: 'Vertical Farming: Growing Up Instead of Out',
+        excerpt: 'Discover how vertical farming is revolutionizing urban agriculture with year-round production.',
+        category: 'Technology & Innovation in Agriculture',
+        date: 'October 8, 2025',
+        author: 'Dr. Kiran Reddy',
+        authorImage: '/image/profile.png',
+        image: '/image/blog/hydroponics.avif',
+        readTime: '7 min read',
+        content: `
+                <h2>What is Vertical Farming?</h2>
+                <p>Vertical farming involves growing crops in stacked layers within controlled environments. This innovative approach maximizes space efficiency and enables year-round production regardless of external weather conditions.</p>
+                
+                <h2>Technology Integration</h2>
+                <p>Modern vertical farms utilize LED grow lights, automated nutrient delivery systems, climate control, and AI-powered monitoring to optimize growing conditions. These technologies dramatically increase productivity per square foot.</p>
+                
+                <h3>Resource Efficiency</h3>
+                <p>Vertical farms use 95% less water than traditional agriculture, eliminate pesticide need, and reduce transportation costs by locating production near urban consumers. The environmental benefits are substantial.</p>
+                
+                <h2>Economic Viability</h2>
+                <p>While initial investment is significant, vertical farms achieve faster crop cycles and higher yields. Leafy greens can be harvested every 21 days, generating consistent revenue streams year-round.</p>
+                
+                <h2>Scaling Strategies</h2>
+                <p>Start with a small pilot system to understand technology and market demand. Gradually expand production capacity based on sales performance and operational efficiency improvements.</p>
+            `,
+        tags: ['Vertical Farming', 'AgriTech', 'Indoor Farming', 'Innovation'],
     },
 ];
 
-
 export const categories: string[] = [
     'All',
-    'Sustainability',
-    'Technology',
-    'Mushroom Farming',
-    'Beekeeping',
-    'Hydroponics',
-    'Market Analysis',
+    'Farming & Cultivation',
+    'Technology & Innovation in Agriculture',
+    'Agribusiness & Entrepreneurship',
+    'Sustainability & Social Impact',
+    'Urban Farming & Gardening',
+    'Stories & Inspirations',
 ];
