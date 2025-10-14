@@ -17,9 +17,9 @@ export default function Navbar() {
 	const navLinks = [
 		{ href: "/about", label: "About" },
 		{ href: "/services", label: "Services" },
-		{ href: "/projects", label: "Projects" },
+		// { href: "/projects", label: "Projects" },
 		{ href: "/products", label: "Products" },
-		{ href: "/impact", label: "Impact" },
+		// { href: "/impact", label: "Impact" },
 		{ href: "/blog", label: "Blog" },
 	];
 
@@ -33,7 +33,7 @@ export default function Navbar() {
 					: "bg-transparent py-4 sm:py-6"
 				}`}
 		>
-			<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between">
+			<div className="container mx-auto px-4 sm:px-6 md:px-8 xl:px-0 flex items-center justify-between">
 				{/* Logo */}
 				<Link href="/" className="flex items-center">
 					<Image

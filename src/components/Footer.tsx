@@ -20,18 +20,20 @@ export default function Footer() {
 
 	return (
 		<footer className="bg-dark text-white">
-			<div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+			<div className="container mx-auto px-6 md:px-12 xl:px-0 py-16">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 					{/* Brand */}
 					<div>
-						<Image
-							src="/logo/logo_light.png" // 🖼️ replace with your actual logo path (e.g. /logo.svg or /logo.png)
-							alt="PRABHA Agritech Logo"
-							width={140} // adjust based on your design
-							height={50}
-							className="mb-3" // keeps spacing consistent with previous heading
-							priority
-						/>
+						<Link href="/">
+							<Image
+								src="/logo/logo_light.png" 
+								alt="PRABHA Agritech Logo"
+								width={140} 
+								height={50}
+								className="mb-3"
+								priority
+							/>
+						</Link>
 						<p className="text-white/70 text-sm leading-relaxed mb-6">
 							Empowering Farmers. Inspiring Futures.
 						</p>
@@ -39,7 +41,7 @@ export default function Footer() {
 							📍 Ajmer & Bhilwara, Rajasthan
 						</p>
 					</div>
- 
+
 					{/* Company Links */}
 					<div>
 						<h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-sunrise-gold">
