@@ -86,11 +86,11 @@ export default function ServicesPage() {
                 {/* Services List */}
                 <div className="space-y-8 sm:space-y-12 lg:space-y-20">
                     {services.map((service, index) => (
-                        <Link
-                            href={`/services/${service.id}`}
+                        <div
                             key={service.title}
-                            className={`flex flex-col md:flex-row items-center gap-6 sm:gap-8 lg:gap-10 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                                } hover:bg-gray-50 transition-colors rounded-xl p-4 sm:p-6`}
+                            className={`flex flex-col md:flex-row items-center gap-6 sm:gap-8 lg:gap-10 ${
+                                index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                            } rounded-xl p-4 sm:p-6 bg-white hover:bg-gray-50 transition-colors`}
                         >
                             {/* Text Section */}
                             <div className="flex-1 space-y-3 sm:space-y-4">
@@ -112,6 +112,16 @@ export default function ServicesPage() {
                                         </li>
                                     ))}
                                 </ul>
+
+                                <Link
+                                    href={`/services/${service.id}`}
+                                    className="inline-flex items-center px-4 py-2 mt-8 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors"
+                                >
+                                    <span>View More Details</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                    </svg>
+                                </Link>
                             </div>
 
                             {/* Image Section */}
@@ -125,7 +135,7 @@ export default function ServicesPage() {
                                     priority={index === 0}
                                 />
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </div>
