@@ -28,7 +28,7 @@ export default function Home() {
       tagline: 'From Water to Wellness',
       description: 'Premium hydroponically grown clean produce. Pure. Fresh. Smartly Grown.',
       icon: <span className="text-2xl">🥬</span>,
-      image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=800&q=80',
+      image: '/image/services/hydroponics.png',
       href: '/services#fresh'
     },
     {
