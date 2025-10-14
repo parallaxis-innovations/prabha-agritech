@@ -88,7 +88,7 @@ export default function Footer() {
 						</p>
 						<Link
 							href="/contact"
-							className="inline-block px-6 py-2.5 bg-earth-green text-white rounded-full text-sm font-medium hover:bg-sunrise-gold hover:text-dark transition-all duration-300"
+							className="inline-block px-6 py-2.5  rounded-full text-sm font-medium bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark transition-all duration-300"
 						>
 							Get in Touch
 						</Link>
