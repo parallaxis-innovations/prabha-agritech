@@ -16,7 +16,7 @@ export default function Envestment() {
             <div>
                 <Link href="/services" className="block w-full md:w-auto" >
                     <Image
-                        src="/image/Tree.png"
+                        src="/image/prabha-tree.png"
                         alt="Envestment"
                         width={1200}
                         height={800}
