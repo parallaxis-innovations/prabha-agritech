@@ -2,7 +2,7 @@
 import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
 import ServicesCarousel from '../components/ServicesCarousel';
-import Envestment from '../components/Envestment';
+import PrabhaTree from '../components/PrabhaTree';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       <section>
-        <Envestment />
+        <PrabhaTree />
       </section>
 
       {/* Key Divisions Section */}
