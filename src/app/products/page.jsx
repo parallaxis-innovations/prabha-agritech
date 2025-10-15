@@ -4,20 +4,20 @@ const products = [
 	{
 		title: "Greenhouse Solutions",
 		image:
-			"https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=800&q=80",
+			"/products/green-house/greenhouse-polycarbonate.png",
 	},
-	{
-		title: "Soilless & Cocopeat",
-		image:
-			"https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
-	},
+	// {
+	// 	title: "Soilless & Cocopeat",
+	// 	image:
+	// 		"https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
+	// },
 	{
 		title: "Hydroponics",
 		image:
-			"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80",
+			"/image/services/hydroponics.png",
 	},
 	{
-		title: "Solar Panels",
+		title: "Solar Dehydration",
 		image:
 			"https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
 	},
@@ -29,7 +29,7 @@ const products = [
 	{
 		title: "Smart Technology",
 		image:
-			"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800&q=80",
+			"/image/services/technology.png",
 	},
 ];
 
@@ -40,7 +40,7 @@ const ProductsPage = () => {
 			<section className="relative w-full h-[400px] md:h-[600px] flex items-center justify-center bg-gray-900">
 				<div className="absolute inset-0 w-full h-full">
 					<img
-						src="https://plus.unsplash.com/premium_photo-1664116928607-896124327b11?w=900&auto=format&fit=crop&q=60"
+						src="/products/product-banner.png"
 						alt="Products Banner"
 						className="w-full h-full object-cover brightness-75"
 					/>
