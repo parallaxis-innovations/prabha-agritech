@@ -75,7 +75,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Services Content */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                 <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Our Services</h2>
                     <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-600">
@@ -84,56 +84,58 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Services List */}
-                <div className="space-y-8 sm:space-y-12 lg:space-y-20">
+                <div className="space-y-8 sm:space-y-12 lg:space-y-16">
                     {services.map((service, index) => (
                         <div
                             key={service.title}
-                            className={`flex flex-col md:flex-row items-center gap-6 sm:gap-8 lg:gap-10 ${
+                            className={`flex flex-col md:flex-row items-start gap-6 sm:gap-8 lg:gap-10 ${
                                 index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                            } rounded-xl p-4 sm:p-6 bg-white hover:bg-gray-50 transition-colors`}
+                            } rounded-xl p-4 sm:p-6 lg:p-8 bg-white hover:bg-gray-50 transition-colors shadow-sm`}
                         >
                             {/* Text Section */}
-                            <div className="flex-1 space-y-3 sm:space-y-4">
-                                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900">{service.title}</h3>
-                                <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-emerald-600">{service.tagline}</p>
-                                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">{service.desc}</p>
+                            <div className="flex-1 w-full space-y-4">
+                                <h3 className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-900">{service.title}</h3>
+                                <p className="text-lg sm:text-xl font-medium text-emerald-600">{service.tagline}</p>
+                                <p className="text-base sm:text-lg text-gray-600">{service.desc}</p>
 
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-3 sm:mt-4">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
                                     {service.features.map((feature) => (
-                                        <li key={feature} className="flex text-sm sm:text-base md:text-lg lg:text-xl items-center text-gray-700">
+                                        <li key={feature} className="flex items-center text-sm sm:text-base text-gray-700">
                                             <svg
-                                                className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-500 mr-1.5 sm:mr-2 flex-shrink-0"
+                                                className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-500 mr-2 flex-shrink-0"
                                                 fill="currentColor"
                                                 viewBox="0 0 8 8"
                                             >
                                                 <circle cx="4" cy="4" r="3" />
                                             </svg>
-                                            {feature}
+                                            <span className="line-clamp-1">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
 
                                 <Link
                                     href={`/services/${service.id}`}
-                                    className="inline-flex items-center px-4 py-2 mt-8 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors"
+                                    className="inline-flex items-center px-5 py-2.5 mt-6 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors text-sm sm:text-base"
                                 >
                                     <span>View More Details</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                                         <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                     </svg>
                                 </Link>
                             </div>
 
                             {/* Image Section */}
-                            <div className="w-full md:w-1/2 relative aspect-video rounded-lg overflow-hidden shadow-lg mt-6 md:mt-0">
-                                <Image
-                                    src={service.image}
-                                    alt={service.title}
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    priority={index === 0}
-                                />
+                            <div className="w-full md:w-2/5 relative rounded-lg overflow-hidden shadow-lg">
+                                <div className="aspect-[4/3] relative">
+                                    <Image
+                                        src={service.image}
+                                        alt={service.title}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, 40vw"
+                                        priority={index === 0}
+                                    />
+                                </div>
                             </div>
                         </div>
                     ))}
