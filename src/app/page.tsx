@@ -1,6 +1,7 @@
 "use client";
 import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
+import ServicesCarousel from '../components/ServicesCarousel';
 import Envestment from '../components/Envestment';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -85,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* Key Divisions Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-12">
+      <section className="py-10 lg:py-12 md:py-10 px-4 sm:px-6 lg:px-12">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,10 +100,10 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {divisions.map((division, idx) => (
-              <ServiceCard key={division.title} {...division} delay={idx * 0.1} />
-            ))}
+          <div className="overflow-hidden px-4 sm:px-6">
+             <div className="flex gap-6 sm:gap-8">
+            <ServicesCarousel divisions={divisions} />
+             </div>
           </div>
         </div>
       </section>
