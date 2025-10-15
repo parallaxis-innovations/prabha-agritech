@@ -78,6 +78,30 @@ export const productData = {
           },
         ],
       },
+      {
+        slug: "net-house",
+        title: "NetHouse",
+        bannerImage: "/products/green-house/net-house-banner.png",
+        mainImage: "/products/green-house/net-house.png",
+        shortDescription:
+          "Experience the perfect balance of durability, space efficiency, andpest protection with our innovative dome-shaped designs.",
+        features: [
+          "Superior Wind Resistance",
+          "Maximized Growing Space",
+          "Effective Pest Protection",
+          "Excellent Natural Light Distribution"
+        ],
+        content: [
+          {
+            heading: "Streamlined Protection with Space-Efficient Design",
+            text: [
+              "Dome Shape Net Houses feature aerodynamic curved structures that effectively resist wind pressure while maximizing interior growing volume. Their unique design distributes sunlight evenly throughout the day while providing consistent airflow and pest protection.",
+              "This innovative shape creates a self-supporting structure that requires fewer internal supports, allowing for more usable growing space and easier movement within the facility.",
+              "It provide excellent cross ventilation and growth for various vegetable crops, including tomatoes, capsicum, and cucumbers, as well as flowers and ornamentals. They offer adjustable shade percentages for different crops and protect against hail, excessive sunlight, and wide range of insect attacks."
+            ],
+          },
+        ],
+      },
     ],
   },
 
@@ -257,80 +281,80 @@ export const productData = {
     ],
   },
 
-  soillessAndCocopeat: {
-    name: "Soilless & Cocopeat Solutions",
-    description:
-      "Enhance crop productivity using eco-friendly, sustainable soilless growing media. Our cocopeat-based products offer superior aeration, drainage, and nutrient retention for modern farming applications.",
-    subProducts: [
-      {
-        slug: "through-bags",
-        title: "Through Bags",
-        bannerImage: "/products/soilless/through-bag-banner.png",
-        mainImage: "/products/soilless/through-bag.png",
-        shortDescription:
-          "Designed for commercial cultivation, through bags provide excellent drainage and airflow for strong root development.",
-        features: [
-          "Optimized Drainage and Aeration",
-          "Ready-to-Use and Lightweight",
-          "Supports Uniform Plant Growth",
-          "Reusable and Eco-Friendly Material",
-        ],
-        content: [
-          {
-            heading: "Efficient Soilless Growing Solution",
-            text: [
-              "Through Bags are ideal for hydroponic and greenhouse cultivation, offering excellent water management and air circulation. They promote healthy root growth while preventing waterlogging and fungal infections.",
-              "Made from high-quality cocopeat blend, these bags are ready to use and can be easily integrated into drip irrigation systems, ensuring consistent crop yield."
-            ],
-          },
-        ],
-      },
-      {
-        slug: "grow-slabs",
-        title: "Grow Slabs",
-        bannerImage: "/products/soilless/grow-slab-banner.png",
-        mainImage: "/products/soilless/grow-slab.png",
-        shortDescription:
-          "Premium cocopeat slabs formulated for efficient root zone management and high-yield cultivation.",
-        features: [
-          "Consistent Moisture Retention",
-          "Perfect for Tomatoes, Cucumbers, and Strawberries",
-          "Pre-Cut Planting Holes for Easy Setup",
-          "100% Organic and Renewable Media",
-        ],
-        content: [
-          {
-            heading: "High-Performance Media for Commercial Cultivation",
-            text: [
-              "Grow Slabs are compact, easy-to-handle growing media used in hydroponic systems. They provide an optimal balance between water retention and air porosity for better root growth.",
-              "Suitable for commercial crops like tomatoes, peppers, and strawberries, Grow Slabs ensure uniform nutrient distribution and help reduce water wastage."
-            ],
-          },
-        ],
-      },
-      {
-        slug: "grow-bags",
-        title: "Grow Bags",
-        bannerImage: "/products/soilless/grow-bag-banner.png",
-        mainImage: "/products/soilless/grow-bag.png",
-        shortDescription:
-          "Versatile and space-efficient grow bags for greenhouse and terrace farming applications.",
-        features: [
-          "Durable, UV-Stabilized Material",
-          "Reusable and Easy to Transport",
-          "Excellent Water Holding Capacity",
-          "Ideal for Vegetables, Herbs, and Ornamentals",
-        ],
-        content: [
-          {
-            heading: "Flexible Growing Solution for Urban and Commercial Use",
-            text: [
-              "Grow Bags are a popular choice for both home and commercial growers. Made from UV-treated materials and filled with cocopeat mix, they provide excellent support for root aeration and water retention.",
-              "These bags are suitable for a wide range of crops, making them an affordable and sustainable alternative to traditional soil-based cultivation."
-            ],
-          },
-        ],
-      },
-    ],
-  },
+//   soillessAndCocopeat: {
+//     name: "Soilless & Cocopeat Solutions",
+//     description:
+//       "Enhance crop productivity using eco-friendly, sustainable soilless growing media. Our cocopeat-based products offer superior aeration, drainage, and nutrient retention for modern farming applications.",
+//     subProducts: [
+//       {
+//         slug: "through-bags",
+//         title: "Through Bags",
+//         bannerImage: "/products/soilless/through-bag-banner.png",
+//         mainImage: "/products/soilless/through-bag.png",
+//         shortDescription:
+//           "Designed for commercial cultivation, through bags provide excellent drainage and airflow for strong root development.",
+//         features: [
+//           "Optimized Drainage and Aeration",
+//           "Ready-to-Use and Lightweight",
+//           "Supports Uniform Plant Growth",
+//           "Reusable and Eco-Friendly Material",
+//         ],
+//         content: [
+//           {
+//             heading: "Efficient Soilless Growing Solution",
+//             text: [
+//               "Through Bags are ideal for hydroponic and greenhouse cultivation, offering excellent water management and air circulation. They promote healthy root growth while preventing waterlogging and fungal infections.",
+//               "Made from high-quality cocopeat blend, these bags are ready to use and can be easily integrated into drip irrigation systems, ensuring consistent crop yield."
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         slug: "grow-slabs",
+//         title: "Grow Slabs",
+//         bannerImage: "/products/soilless/grow-slab-banner.png",
+//         mainImage: "/products/soilless/grow-slab.png",
+//         shortDescription:
+//           "Premium cocopeat slabs formulated for efficient root zone management and high-yield cultivation.",
+//         features: [
+//           "Consistent Moisture Retention",
+//           "Perfect for Tomatoes, Cucumbers, and Strawberries",
+//           "Pre-Cut Planting Holes for Easy Setup",
+//           "100% Organic and Renewable Media",
+//         ],
+//         content: [
+//           {
+//             heading: "High-Performance Media for Commercial Cultivation",
+//             text: [
+//               "Grow Slabs are compact, easy-to-handle growing media used in hydroponic systems. They provide an optimal balance between water retention and air porosity for better root growth.",
+//               "Suitable for commercial crops like tomatoes, peppers, and strawberries, Grow Slabs ensure uniform nutrient distribution and help reduce water wastage."
+//             ],
+//           },
+//         ],
+//       },
+//       {
+//         slug: "dutch-bags",
+//         title: "Dutch Bags",
+//         bannerImage: "/products/soilless/grow-bag-banner.png",
+//         mainImage: "/products/soilless/grow-bag.png",
+//         shortDescription:
+//           "Versatile and space-efficient grow bags for greenhouse and terrace farming applications.",
+//         features: [
+//           "Durable, UV-Stabilized Material",
+//           "Reusable and Easy to Transport",
+//           "Excellent Water Holding Capacity",
+//           "Ideal for Vegetables, Herbs, and Ornamentals",
+//         ],
+//         content: [
+//           {
+//             heading: "Flexible Growing Solution for Urban and Commercial Use",
+//             text: [
+//               "Grow Bags are a popular choice for both home and commercial growers. Made from UV-treated materials and filled with cocopeat mix, they provide excellent support for root aeration and water retention.",
+//               "These bags are suitable for a wide range of crops, making them an affordable and sustainable alternative to traditional soil-based cultivation."
+//             ],
+//           },
+//         ],
+//       },
+//     ],
+//   },
 };
