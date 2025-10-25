@@ -10,7 +10,7 @@ export default function Envestment() {
             </p>
             <div className="text-center mb-12">
                 <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-dark leading-tight">
-                    Prabha Business Verticals
+                    Prabha Business
                 </h2>
             </div>
             <div>
