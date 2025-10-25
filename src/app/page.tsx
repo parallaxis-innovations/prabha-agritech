@@ -15,7 +15,7 @@ export default function Home() {
       description: 'Advanced mushroom cultivation, R&D, and comprehensive training programs.',
       icon: <span className="text-2xl">🍄</span>,
       image: 'https://media.istockphoto.com/id/1396681773/photo/converging-lines-of-rows-of-shitake-mushrooms-growing-in-indoor-farm.webp?a=1&b=1&s=612x612&w=0&k=20&c=npF75rRzQzRpGf3fq9hKdkcoVFTj1KqalUCme9N3AJA=',
-      href: '/services#shroom'
+      href: '/services/prabha-shroom'
     },
     {
       title: 'Prabha Hive',
@@ -23,7 +23,7 @@ export default function Home() {
       description: 'Honeybee farming, pure honey production, and pollination services for healthier ecosystems.',
       icon: <span className="text-2xl">🐝</span>,
       image: 'https://media.istockphoto.com/id/1294583580/photo/beekeeper-working-collect-honey.webp?a=1&b=1&s=612x612&w=0&k=20&c=2khGBBAqRdBbE611QHeYR0_wo1qf1kLZ80gVlCDOgdY=',
-      href: '/services#hive'
+      href: '/services/prabha-hive'
     },
     {
       title: 'Prabha Fresh',
@@ -31,7 +31,7 @@ export default function Home() {
       description: 'Premium hydroponically grown clean produce. Pure. Fresh. Smartly Grown.',
       icon: <span className="text-2xl">🥬</span>,
       image: '/image/services/hydroponics.png',
-      href: '/services#fresh'
+      href: '/services/prabha-fresh'
     },
     {
       title: 'Prabha Learn',
@@ -39,7 +39,7 @@ export default function Home() {
       description: 'Workshops, R&D, consultancy, and full-fledged agritech training hub.',
       icon: <span className="text-2xl">🎓</span>,
       image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80',
-      href: '/services#learn'
+      href: '/services/prabha-learn'
     },
     {
       title: 'Prabha Technovation',
@@ -47,7 +47,7 @@ export default function Home() {
       description: 'Greenhouses, tech infrastructure, automation, IoT sensors, and digital tools for modern farms.',
       icon: <span className="text-2xl">⚙️</span>,
       image: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=80',
-      href: '/services#technovation'
+      href: '/services/prabha-technovation'
     },
   ];
 
