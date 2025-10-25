@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
 import ServicesCarousel from '../components/ServicesCarousel';
 import PrabhaTree from '../components/PrabhaTree';
+import Partners from '../components/Partners';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -146,6 +147,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+      <Partners />
 
       {/* Testimonial / CTA Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-12 bg-cream">
