@@ -2,121 +2,146 @@ export const services = [
     {
         id: 'prabha-shroom',
         title: 'Prabha Shroom',
-        desc: 'Advanced mushroom cultivation, R&D, and comprehensive training programs.',
-        tagline: 'Growing nutrition, farming the future of nutritional protein',
-        features: ['Mushroom Cultivation', 'R&D Programs', 'Training Workshops', 'Quality Control'],
+        desc: 'Specialized in cultivation, processing, and training of high-yield Oyster and Button mushrooms.',
+        tagline: 'Growing Nutrition Naturally',
+        features: [
+            'Farm Setup Planning',
+            'Substrate Preparation',
+            'Environmental Control',
+            'Pest Management',
+            'Marketing Guidance'
+        ],
         image: '/image/services/mushroom.png',
-        fullDescription: `Our mushroom cultivation program combines traditional knowledge with modern technology.
-            We specialize in various gourmet and medicinal mushroom varieties, offering complete solutions
-            from spawn production to harvest management.`,
+        fullDescription: `Mushrooms are more than a crop — they are a sustainable food revolution. At Prabha Shroom, we specialize in the cultivation, processing, and training of high-yield Oyster and Button mushrooms using controlled, eco-friendly techniques. Our model is designed to help farmers, entrepreneurs, and rural youth establish profitable mushroom units with minimal investment and maximum efficiency.\n\n"From waste to wealth — we turn straw and sunlight into food and fortune."`,
         benefits: [
-            'State-of-the-art cultivation facilities',
-            'Expert guidance and support',
-            'Quality spawn production',
-            'Market linkage assistance',
-            'Regular training programs'
+            'End-to-end cultivation solutions',
+            'Training in environmental control',
+            'Pest management expertise',
+            'Marketing support for local branding',
+            'Ideal for limited land and water resources'
         ],
         specifications: {
-            'Production Capacity': '500kg per day',
-            'Varieties': 'Button, Oyster, Shiitake, etc.',
-            'Technology': 'Climate controlled facilities',
-            'Quality Standards': 'FSSAI Certified'
+            'Production Focus': 'Oyster and Button mushrooms',
+            'Technology': 'Controlled eco-friendly techniques',
+            'Setup Type': 'Small shed to commercial scale',
+            'Support': 'Complete cultivation cycle guidance',
+            'Unique Feature': 'Waste to wealth conversion'
         }
     },
     {
         id: 'prabha-hive',
         title: 'Prabha Hive',
-        desc: 'Expert beekeeping services, pure honey production, and pollination solutions.',
-        tagline: "Sweetening nature's work, the buzz behind sustainability",
-        features: ['Beekeeping Services', 'Pure Honey Production', 'Pollination Services', 'Colony Management'],
+        desc: 'Natural honeybee cultivation and pollination services promoting ecological balance.',
+        tagline: 'The Buzz Behind Sustainability',
+        features: [
+            'High-quality Honey Production',
+            'Pollination Services',
+            'Training Programs',
+            'Apiary Setup Design',
+            'Multi-crop Integration'
+        ],
         image: '/image/services/honeyfarming.png',
-        fullDescription: `Our beekeeping division provides comprehensive solutions for honey production and pollination services.
-            We maintain the highest standards in bee colony management while promoting sustainable beekeeping practices
-            and biodiversity conservation.`,
+        fullDescription: `Bees are the backbone of biodiversity. At Prabha Hive, we promote natural honeybee cultivation as both a profitable venture and an ecological necessity. We design apiary setups that fit small farmers as well as commercial orchards, ensuring safety, productivity, and purity. Our focus is on producing pure, unblended honey while restoring nature's balance.\n\n"Each drop of honey carries the story of a blooming farm."`,
         benefits: [
-            'Modern beekeeping equipment',
-            'Pure honey extraction facilities',
-            'Professional colony management',
-            'Pollination services for farms',
-            'Regular health monitoring'
+            'Standardized boxes and colonies',
+            'Comprehensive pollination services',
+            'Training for farmers and groups',
+            'Increased crop yields',
+            'Support for biodiversity'
         ],
         specifications: {
-            'Colony Strength': '1000+ colonies',
-            'Honey Production': '2000kg per month',
-            'Certification': 'Organic certified',
-            'Coverage Area': 'Pan India services'
+            'Target Crops': 'Mustard, Sunflower, Vegetables, Fruits',
+            'Setup Scale': 'Small farms to commercial orchards',
+            'Focus': 'Pure, unblended honey production',
+            'Training': 'Farmers, youth, women self-help groups',
+            'Integration': 'Multi-cropping models support'
         }
     },
     {
         id: 'prabha-fresh',
         title: 'Prabha Fresh',
-        desc: 'Premium hydroponic produce with indoor/outdoor farm setup solutions.',
-        tagline: 'From water to wellness, pure fresh smartly grown',
-        features: ['Hydroponic Systems', 'Clean Produce', 'Farm Setup', 'Retail Solutions'],
+        desc: 'Advanced hydroponic and vertical farming systems for high-value produce.',
+        tagline: 'From Water to Wellness',
+        features: [
+            'NFT Systems',
+            'Dutch Bucket Systems',
+            'Vertical Tower Systems',
+            'Aeroponic Systems',
+            'Automated Controls'
+        ],
         image: '/image/services/hydroponics.png',
-        fullDescription: `Our hydroponic solutions deliver clean, efficient, and sustainable farming methods.
-            We design and implement both small and large-scale hydroponic systems, focusing on
-            resource optimization and maximum yield.`,
+        fullDescription: `At Prabha Fresh, we bring the future of farming to today's fields. Our hydroponic and vertical farming systems allow cultivation of exotic and high-value vegetables — lettuce, basil, spinach, cherry tomatoes, kale, and more — using up to 90% less water and zero soil. Our mission is to make safe, pesticide-free greens available directly from local farms to nearby consumers.\n\n"From water to wellness — we grow what tomorrow will eat."`,
         benefits: [
-            'Water-efficient systems',
-            'Year-round production',
-            'Pesticide-free produce',
-            'Advanced nutrient management',
-            'IoT-enabled monitoring'
+            'Up to 90% water savings',
+            'Zero soil requirement',
+            'Automated nutrient control',
+            'Climate-controlled environment',
+            'Direct farm-to-consumer model'
         ],
         specifications: {
-            'System Types': 'NFT, DWC, Aeroponic',
-            'Production Area': 'Customizable from 100-10000 sq ft',
-            'Automation Level': 'Fully automated options',
-            'Crop Varieties': 'Leafy greens, herbs, vegetables'
+            'System Types': 'NFT, Dutch bucket, Vertical tower, Aeroponic',
+            'Scale Options': 'Commercial and home use',
+            'Automation': 'Nutrient dosing, pH, climate control',
+            'Produce Types': 'Exotic vegetables and leafy greens',
+            'Support': 'Crop planning and post-harvest guidance'
         }
     },
     {
         id: 'prabha-learn',
         title: 'Prabha Learn',
-        desc: 'Comprehensive agricultural training and consultancy hub.',
-        tagline: "Training India's next agri-leaders",
-        features: ['Workshops', 'R&D Programs', 'Consultancy', 'Agritech Training'],
+        desc: 'PRABHA\'s dedicated training and capacity-building wing for skilled agri-entrepreneurs.',
+        tagline: 'Training India\'s Next Agri-Leaders',
+        features: [
+            'Technical Training',
+            'Agribusiness Planning',
+            'Technology Integration',
+            'Financial Literacy',
+            'Entrepreneurial Mentorship'
+        ],
         image: '/image/services/training.png',
-        fullDescription: `Our education division focuses on building the next generation of agricultural entrepreneurs.
-            We provide hands-on training, theoretical knowledge, and practical exposure to modern farming
-            techniques and technologies.`,
+        fullDescription: `Knowledge is the first seed of transformation. Prabha Learn is PRABHA's training and capacity-building wing dedicated to creating skilled agri-entrepreneurs. Each program combines hands-on learning and real farm exposure so participants walk away confident to start or scale their own ventures.\n\n"We don't just teach farming — we teach how to make farming a business of pride and profit."`,
         benefits: [
-            'Expert-led training programs',
-            'Practical hands-on experience',
-            'Modern facility exposure',
-            'Ongoing support system',
-            'Industry networking'
+            'Structured on-field training',
+            'Classroom programs',
+            'Hands-on learning experience',
+            'Real farm exposure',
+            'Entrepreneurial guidance'
         ],
         specifications: {
-            'Course Duration': '1 week to 6 months',
-            'Training Modes': 'Online and offline',
-            'Batch Size': '20-30 students',
-            'Certification': 'Industry recognized'
+            'Program Areas': 'Mushroom, Hydroponics, Beekeeping, Vermicomposting',
+            'Business Focus': 'Planning, Branding, Market Access',
+            'Technology Training': 'IoT, Solar Integration, Automation',
+            'Additional Support': 'Government schemes, FPO formation',
+            'Target Groups': 'Farmers, Students, NGOs, Rural Youth'
         }
     },
     {
         id: 'prabha-technovation',
         title: 'Prabha Technovation',
-        desc: 'Advanced farm design and technology integration services.',
-        tagline: 'Designing farms for tomorrow',
-        features: ['Greenhouse Design', 'IoT Solutions', 'Automation Systems', 'Infrastructure Setup'],
+        desc: 'Next-generation farm infrastructure and technology integration solutions.',
+        tagline: 'Designing Farms for Tomorrow',
+        features: [
+            'Greenhouse Construction',
+            'Climate Control Systems',
+            'Automation Integration',
+            'Solar Solutions',
+            'IoT Monitoring'
+        ],
         image: '/image/services/technology.png',
-        fullDescription: `We specialize in designing and implementing cutting-edge agricultural infrastructure.
-            Our solutions incorporate IoT, automation, and smart monitoring systems to create
-            efficient and productive farming environments.`,
+        fullDescription: `Modern agriculture begins with smart design. Prabha Technovation focuses on building next-generation farm infrastructure and integrating technology that makes agriculture efficient, scalable, and sustainable. Our goal is not just to build structures — but to build systems that pay for themselves through precision, productivity, and reduced waste.\n\n"When design meets data, even a few acres can feed a city."`,
         benefits: [
-            'Custom design solutions',
-            'Smart automation systems',
-            'Remote monitoring capability',
-            'Energy-efficient setups',
-            'Scalable infrastructure'
+            'Turnkey infrastructure solutions',
+            'Climate-controlled environments',
+            'Energy independence through solar',
+            'Real-time monitoring systems',
+            'Custom design approach'
         ],
         specifications: {
-            'Design Capacity': 'Up to 100 acres',
-            'Technology Stack': 'IoT, AI, Automation',
-            'Support': '24/7 technical assistance',
-            'Integration': 'Full systems integration'
+            'Infrastructure': 'Greenhouse, Polyhouse, Shade-net',
+            'Control Systems': 'Irrigation, Fogging, Lighting, Ventilation',
+            'Monitoring': 'Temperature, Humidity, pH & EC tracking',
+            'Energy': 'Solar integration options',
+            'Design': 'Custom solutions for all scales'
         }
     }
 ];
