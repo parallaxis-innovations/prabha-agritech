@@ -86,6 +86,9 @@ export default function Home() {
         <PrabhaTree />
       </section>
 
+      {/* Partners Section */}
+      <Partners />
+
       {/* Key Divisions Section */}
       <section className="py-10 lg:py-12 md:py-10 px-4 sm:px-6 lg:px-12">
         <div className="container mx-auto">
@@ -148,8 +151,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <Partners />
 
       {/* Testimonial / CTA Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-12 bg-cream">
