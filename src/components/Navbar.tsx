@@ -226,8 +226,8 @@ export default function Navbar() {
             <Image
               src={
                 scrolled || menuOpen
-                  ? "/logo/logo_dark.png"
-                  : "/logo/logo_light.png"
+                  ? "/logo/logo.png"
+                  : "/logo/logo.png"
               }
               alt="PRABHA Agritech Logo"
               width={110}
