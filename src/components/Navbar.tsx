@@ -201,7 +201,7 @@ export default function Navbar() {
             : "bg-transparent py-3"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between lg:justify-center">
+        <div className="max-w-7xl mx-auto px-6 lg:py-4 py-2 lg:px-12 flex items-center justify-between lg:justify-center">
           
           {/* Desktop Layout */}
           <nav className="hidden lg:flex items-center gap-8 absolute left-12">
@@ -226,12 +226,12 @@ export default function Navbar() {
             <Image
               src={
                 scrolled || menuOpen
-                  ? "/logo/logo.png"
-                  : "/logo/logo.png"
+                  ? "/logo/logo_dark.png"
+                  : "/logo/logo_light.png"
               }
               alt="PRABHA Agritech Logo"
-              width={110}
-              height={35}
+              width={200}
+              height={100}
               className="transition-all duration-300 cursor-pointer"
             />
           </Link>
