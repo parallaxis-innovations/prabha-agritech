@@ -244,14 +244,14 @@ export async function POST(request: Request) {
                                 </ul>
                             </div>
                             <div style="text-align: center;">
-                                <a href="${process.env.NEXT_PUBLIC_WEBSITE_URL || '#'}" class="button">Visit Our Website</a>
+                                <a href="https://www.prabhaagritech.com/" class="button">Visit Our Website</a>
                             </div>
                         </div>
                         <div class="footer">
                             <p>Best regards,<br>Team Prabha Agrotech</p>
                             <p>If you need immediate assistance, please contact us at:<br>
-                            Phone: ${process.env.CONTACT_PHONE || '+91 XXXXXXXXXX'}<br>
-                            Email: ${process.env.SMTP_FROM_EMAIL}</p>
+                            Phone: +91 90799 54131<br>
+                            Email: prabhaagritech2@gmail.com</p>
                             <div class="social-links">
                                 Follow us on social media for updates and tips
                             </div>
