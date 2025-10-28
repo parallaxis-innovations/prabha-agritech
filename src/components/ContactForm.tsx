@@ -2,6 +2,7 @@
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
+import { useState } from 'react';
 
 type FormData = {
     name: string;
@@ -13,11 +14,16 @@ type FormData = {
 
 export default function ContactForm() {
     const { register, handleSubmit, formState, reset } = useForm<FormData>({ mode: 'onTouched' });
-    const { errors, isSubmitting, isSubmitSuccessful } = formState;
+    const { errors, isSubmitting } = formState;
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
     async function onSubmit(data: FormData) {
         try {
-            const response = await fetch('/api/send-mail', {
+            setSubmitStatus('idle');
+            setErrorMessage('');
+            
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -25,16 +31,18 @@ export default function ContactForm() {
                 body: JSON.stringify(data),
             });
 
+            const result = await response.json();
+
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                throw new Error(result.error || 'Failed to send message');
             }
 
-            const result = await response.json();
-            console.log('Success:', result);
+            setSubmitStatus('success');
             reset();
         } catch (error) {
             console.error('Error:', error);
-            // You might want to show an error message to the user here
+            setSubmitStatus('error');
+            setErrorMessage(error instanceof Error ? error.message : 'Failed to send message');
         }
     }
 
@@ -67,6 +75,7 @@ export default function ContactForm() {
                             message: 'Please enter a valid 10-digit phone number'
                         }
                     })}
+                    type='tel'
                     placeholder="+91 XXXXX XXXXX"
                     className={`w-full px-4 py-3 rounded-xl border ${errors.phone ? 'border-red-300 bg-red-50' : 'border-slate-200'} focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all`}
                 />
@@ -131,13 +140,23 @@ export default function ContactForm() {
 
             {/* Submit Button */}
             <div className="flex items-center justify-between pt-4">
-                {isSubmitSuccessful && (
+                {submitStatus === 'success' && (
                     <motion.p
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         className="text-sm text-green-600 font-medium"
                     >
-                        ✓ Message sent! We'll get back to you soon.
+                        ✓ Message sent! We&apos;ll get back to you soon.
+                    </motion.p>
+                )}
+
+                {submitStatus === 'error' && (
+                    <motion.p
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="text-sm text-red-600 font-medium"
+                    >
+                        ⚠ {errorMessage}
                     </motion.p>
                 )}
 
