@@ -75,21 +75,6 @@ export default function HeroSection() {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
-            >
-                <div className="flex flex-col items-center gap-1 sm:gap-2">
-                    <span className="text-white/60 text-[10px] sm:text-xs uppercase tracking-wider">Scroll</span>
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-white/60 sm:w-5 sm:h-5">
-                        <path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                </div>
-            </motion.div>
         </section>
     );
 }
