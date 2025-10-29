@@ -1,0 +1,44 @@
+{
+  "feedbacks": [
+    {
+      "id": "1810fd94-6e63-4686-89d7-0383fa341e9d",
+      "name": "Nityaa ",
+      "email": "nyjardosh@gmail.com",
+      "rating": 5,
+      "feedback": "This feedback is for testing. ",
+      "isPublic": true,
+      "isApproved": true,
+      "createdAt": "2025-10-29T08:21:41.426Z"
+    },
+    {
+      "id": "644acb68-da93-4fc9-af09-8e5be2f13d8e",
+      "name": "NITYAA",
+      "email": "nyjardosh@gmail.com",
+      "rating": "5",
+      "feedback": "THIS FEEDBACK IS FOR TESTING",
+      "isPublic": true,
+      "isApproved": true,
+      "createdAt": "2025-10-29T09:56:54.009Z"
+    },
+    {
+      "id": "e3013c16-77dd-457b-93c7-0ac4ac0c7128",
+      "name": "Yatharth ",
+      "email": "yatharth@parallaxis.in",
+      "rating": "5",
+      "feedback": "THIS IS TESTING FEEDBACK",
+      "isPublic": true,
+      "isApproved": true,
+      "createdAt": "2025-10-29T10:01:22.916Z"
+    },
+    {
+      "id": "9667f546-a0be-417e-8489-c4a098766802",
+      "name": "Paras ",
+      "email": "paraskapadi2002@gmail.com",
+      "rating": "5",
+      "feedback": "THIS IS TESTING FEEDBACK",
+      "isPublic": true,
+      "isApproved": true,
+      "createdAt": "2025-10-29T10:06:12.656Z"
+    }
+  ]
+}
