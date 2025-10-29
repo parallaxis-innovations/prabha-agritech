@@ -6,6 +6,8 @@ import PrabhaTree from '../components/PrabhaTree';
 import Partners from '../components/Partners';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import FeedbackSection from '@/components/FeedbackSection';
+import Counter from '@/components/Counter';
 
 export default function Home() {
   const divisions = [
@@ -137,12 +139,21 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="text-center px-2"
+                className="text-center px-2 relative group"
               >
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair text-sunrise-gold mb-2 leading-none">
-                  {stat.value}
-                </div>
-                <div className="text-white/90 text-xs sm:text-sm uppercase tracking-wide px-1">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.2 }}
+                  className="relative"
+                >
+                  <div className="absolute inset-0 bg-sunrise-gold/10 rounded-full blur-2xl transform scale-150 transition-transform duration-500 group-hover:scale-175" />
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-bold font-playfair text-sunrise-gold mb-2 leading-none relative">
+                    <Counter value={stat.value} delay={idx * 0.2} />
+                  </div>
+                </motion.div>
+                <div className="text-white/90 text-xs sm:text-sm uppercase tracking-wide px-1 relative">
                   {stat.label}
                 </div>
               </motion.div>
@@ -151,6 +162,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Feedback Section */}
+      <FeedbackSection />
 
       {/* Testimonial / CTA Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-12 bg-cream">
@@ -161,11 +174,11 @@ export default function Home() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-6 sm:mb-8 leading-tight">
-            Join India's Sustainable <br className="hidden sm:inline md:block lg:inline" />
+            Join India&apos;s Sustainable <br className="hidden sm:inline md:block lg:inline" />
             Farming Revolution
           </h2>
           <p className="text-slate-700 text-base sm:text-lg mb-6 sm:mb-10 leading-relaxed px-4 sm:px-0">
-            Whether you're a farmer, entrepreneur, or institution—let's build a future
+            Whether you&apos;re a farmer, entrepreneur, or institution—let&apos;s build a future
             where agriculture is profitable, respected, and regenerative.
           </p>
           <Link
@@ -176,6 +189,7 @@ export default function Home() {
           </Link>
         </motion.div>
       </section>
+      
     </div>
   );
 }
