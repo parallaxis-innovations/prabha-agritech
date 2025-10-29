@@ -8,6 +8,7 @@ export default function Footer() {
 			{ label: "Our Impact", href: "/impact" },
 			{ label: "Blog", href: "/blog" },
 			{ label: "Contact", href: "/contact" },
+			{ label: "Give Feedback", href: "/feedback" },
 		],
 		Services: [
 			{ label: "Prabha Shroom", href: "/services#shroom" },
@@ -98,7 +99,7 @@ export default function Footer() {
 							</Link>
 
 							<Link
-								href="/contact"
+								href="/feedback"
 								className="px-6 py-2.5 rounded-full text-sm font-medium bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark transition-all duration-300 text-center"
 							>
 								Give Us Feedback
