@@ -26,9 +26,9 @@ export default function Footer() {
 					<div>
 						<Link href="/">
 							<Image
-								src="/logo/logo_light.png" 
+								src="/logo/logo_light.png"
 								alt="PRABHA Agritech Logo"
-								width={140} 
+								width={140}
 								height={50}
 								className="mb-3"
 								priority
@@ -88,12 +88,22 @@ export default function Footer() {
 						<p className="text-white/70 text-sm mb-4">
 							Join the movement towards sustainable farming.
 						</p>
-						<Link
-							href="/contact"
-							className="inline-block px-6 py-2.5  rounded-full text-sm font-medium bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark transition-all duration-300"
-						>
-							Get in Touch
-						</Link>
+
+						<div className="flex flex-col space-y-3">
+							<Link
+								href="/contact"
+								className="px-6 py-2.5 rounded-full text-sm font-medium bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark transition-all duration-300 text-center"
+							>
+								Get in Touch
+							</Link>
+
+							<Link
+								href="/contact"
+								className="px-6 py-2.5 rounded-full text-sm font-medium bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark transition-all duration-300 text-center"
+							>
+								Give Us Feedback
+							</Link>
+						</div>
 					</div>
 				</div>
 
@@ -103,7 +113,7 @@ export default function Footer() {
 						© {new Date().getFullYear()} PRABHA Agritech. All rights reserved.
 					</p>
 					<div className="flex gap-6">
-						<Link
+						{/* <Link
 							href="#"
 							className="text-white/50 hover:text-white transition-colors"
 							aria-label="LinkedIn"
@@ -111,9 +121,9 @@ export default function Footer() {
 							<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 								<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
 							</svg>
-						</Link>
+						</Link> */}
 						<Link
-							href="#"
+							href="https://www.instagram.com/prabha_agritech?igsh=OGhuaW9nbGJsdm8x"
 							className="text-white/50 hover:text-white transition-colors"
 							aria-label="Instagram"
 						>
