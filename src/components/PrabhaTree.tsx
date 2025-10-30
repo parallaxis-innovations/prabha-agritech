@@ -5,12 +5,12 @@ export default function Envestment() {
     return (
         <section className=" flex flex-col items-center justify-center py-16 px-4 bg-gray-50">
             {/* Header */}
-            <p className="text-sunrise-gold text-xs sm:text-sm uppercase tracking-widest mb-3">
+            {/* <p className="text-sunrise-gold text-xs sm:text-sm uppercase tracking-widest mb-3">
                 Our Business
-            </p>
+            </p> */}
             <div className="text-center mb-12">
                 <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-dark leading-tight">
-                    Prabha Business
+                    Prabha Verticals
                 </h2>
             </div>
             <div>
