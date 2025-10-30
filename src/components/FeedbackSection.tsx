@@ -15,15 +15,30 @@ type Feedback = {
 export default function FeedbackSection() {
     const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const itemsPerPage = 3;
+    const [itemsPerPage, setItemsPerPage] = useState(3);
+
+    // ✅ Dynamically set items per page based on screen width
+    useEffect(() => {
+        const updateItemsPerPage = () => {
+            if (window.innerWidth < 640) {
+                setItemsPerPage(1); // small screens
+            } else if (window.innerWidth < 1024) {
+                setItemsPerPage(2); // medium screens (optional)
+            } else {
+                setItemsPerPage(3); // large screens
+            }
+        };
+
+        updateItemsPerPage();
+        window.addEventListener("resize", updateItemsPerPage);
+        return () => window.removeEventListener("resize", updateItemsPerPage);
+    }, []);
 
     useEffect(() => {
         const fetchFeedbacks = async () => {
             try {
                 const response = await fetch('/api/feedback');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch feedbacks');
-                }
+                if (!response.ok) throw new Error('Failed to fetch feedbacks');
                 const data = await response.json();
                 setFeedbacks(data.feedbacks);
             } catch (error) {
@@ -34,9 +49,7 @@ export default function FeedbackSection() {
         fetchFeedbacks();
     }, []);
 
-    if (feedbacks.length === 0) {
-        return null;
-    }
+    if (feedbacks.length === 0) return null;
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) =>
@@ -57,7 +70,7 @@ export default function FeedbackSection() {
     return (
         <section className="py-20 px-4 sm:px-6 bg-[#FAFAF8]">
             <div className="max-w-7xl mx-auto">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -85,18 +98,24 @@ export default function FeedbackSection() {
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: -50 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                                        className="w-full md:w-1/3 bg-white rounded-2xl  overflow-hidden border border-earth-green/10"
+                                        className={`w-full ${
+                                            itemsPerPage === 3
+                                                ? 'md:w-1/3'
+                                                : itemsPerPage === 2
+                                                ? 'sm:w-1/2'
+                                                : 'w-full'
+                                        } bg-white rounded-2xl overflow-hidden border border-earth-green/10`}
                                     >
                                         <div className="p-6 sm:p-8">
                                             <div className="mb-6">
                                                 <Quote className="w-10 h-10 text-earth-green/20" />
                                             </div>
                                             <div className="flex items-center gap-1 mb-4">
-                                                {[...Array(5)].map((_, index) => (
+                                                {[...Array(5)].map((_, i) => (
                                                     <Star
-                                                        key={index}
+                                                        key={i}
                                                         className={`w-5 h-5 ${
-                                                            index < feedback.rating
+                                                            i < feedback.rating
                                                                 ? 'text-sunrise-gold fill-sunrise-gold'
                                                                 : 'text-slate-200'
                                                         }`}
