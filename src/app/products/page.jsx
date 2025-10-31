@@ -17,7 +17,7 @@ const products = [
 			"/image/services/hydroponics.png",
 	},
 	{
-		title: "Solar Dehydration",
+		title: "Solar Dehydrator",
 		image:
 			"https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
 	},
