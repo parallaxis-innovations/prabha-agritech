@@ -28,7 +28,7 @@ export default function ServiceCard({
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-100px" }}
 			transition={{ duration: 0.6, delay, ease: "easeOut" }}
-			className="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 h-full"
+			className="group relative overflow-hidden rounded-2xl bg-white transition-all duration-500 h-full"
 		>
 			<Link href={href} className="block h-full">
 				{/* Image Background */}
@@ -41,9 +41,9 @@ export default function ServiceCard({
 					/>
 
 					{/* Icon Overlay */}
-					<div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full text-white transition-all duration-300 group-hover:bg-sunrise-gold group-hover:text-dark">
+					{/* <div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-full text-white transition-all duration-300 group-hover:bg-sunrise-gold group-hover:text-dark">
                         {icon}
-                    </div>
+                    </div> */}
 				</div>
 
 				{/* Content */}
