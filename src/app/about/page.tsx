@@ -99,7 +99,7 @@ export default function AboutPage() {
                             </h2>
                             <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                                 <p>
-                                    PRABHA (Rising Sun) began with a simple yet powerful belief: that farming deserves the same respect, innovation, and prosperity as any other profession.
+                                    PRABHA means Rising Sun, began with a simple yet powerful belief: that farming deserves the same respect, innovation, and prosperity as any other profession.
                                 </p>
                                 <p>
                                     We witnessed the disconnect between India's agricultural heritage and modern market demands. Farmers, the backbone of our nation, were often left behind in the race toward progress.
