@@ -10,6 +10,7 @@ type FeedbackData = {
     rating: number;
     feedback: string;
     isPublic: boolean;
+    photo: string; // Make photo required
 };
 
 type StoredFeedback = FeedbackData & {
@@ -55,11 +56,19 @@ export async function POST(request: Request) {
             );
         }
 
+        // Ensure photo is set, use default if not provided
+        if (!body.photo) {
+            body.photo = '/image/profile.png';
+        }
+
+        // Set default photo if none provided
+        const defaultPhoto = '/image/profile.png';
+        
         // Create the feedback object with additional fields
         const newFeedback = {
             id: uuidv4(),
             ...body,
-            // isApproved: false, // New feedbacks are not approved by default
+            photo: body.photo || defaultPhoto, // Use default photo if none provided
             isPublic: true,  // ✅ Auto public
             isApproved: true, // ✅ Auto approved
             createdAt: new Date().toISOString()
