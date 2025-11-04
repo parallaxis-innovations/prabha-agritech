@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 type Feedback = {
@@ -10,6 +11,7 @@ type Feedback = {
     feedback: string;
     isApproved: boolean;
     createdAt: string;
+    photo: string;
 };
 
 export default function FeedbackSection() {
@@ -125,13 +127,24 @@ export default function FeedbackSection() {
                                             <p className="text-slate-600 mb-6 line-clamp-4">
                                                 {feedback.feedback}
                                             </p>
-                                            <div className="pt-6 border-t border-slate-100">
-                                                <p className="font-playfair font-semibold text-dark">
-                                                    {feedback.name}
-                                                </p>
-                                                <p className="text-sm text-slate-500">
-                                                    {new Date(feedback.createdAt).toLocaleDateString()}
-                                                </p>
+                                            <div className="pt-6 border-t border-slate-100 flex items-center gap-4">
+                                                <div className="w-12 h-12 rounded-full overflow-hidden">
+                                                    <Image 
+                                                        src={feedback.photo} 
+                                                        alt={`${feedback.name}'s photo`}
+                                                        width={48}
+                                                        height={48}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <p className="font-playfair font-semibold text-dark">
+                                                        {feedback.name}
+                                                    </p>
+                                                    <p className="text-sm text-slate-500">
+                                                        {new Date(feedback.createdAt).toLocaleDateString()}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </motion.div>
