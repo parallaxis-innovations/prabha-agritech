@@ -10,6 +10,7 @@ type FeedbackData = {
     rating: number;
     feedback: string;
     isPublic: boolean;
+    photo?: string;
 };
 
 export default function FeedbackForm() {
@@ -131,6 +132,32 @@ export default function FeedbackForm() {
                 <label htmlFor="isPublic" className="text-sm text-slate-600">
                     I agree to make my feedback public on the website
                 </label>
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Your Photo (Optional)
+                </label>
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={async (e) => {
+                        const file = e.target.files?.[0];
+                        if (file) {
+                            // Convert to base64
+                            const reader = new FileReader();
+                            reader.onloadend = () => {
+                                const base64String = reader.result as string;
+                                // Set the photo value in the form
+                                register('photo').onChange({
+                                    target: { name: 'photo', value: base64String }
+                                });
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all"
+                />
             </div>
 
             <motion.button

@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 type Feedback = {
@@ -10,20 +11,36 @@ type Feedback = {
     feedback: string;
     isApproved: boolean;
     createdAt: string;
+    photo: string;
 };
 
 export default function FeedbackSection() {
     const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const itemsPerPage = 3;
+    const [itemsPerPage, setItemsPerPage] = useState(3);
+
+    // ✅ Dynamically set items per page based on screen width
+    useEffect(() => {
+        const updateItemsPerPage = () => {
+            if (window.innerWidth < 640) {
+                setItemsPerPage(1); // small screens
+            } else if (window.innerWidth < 1024) {
+                setItemsPerPage(2); // medium screens (optional)
+            } else {
+                setItemsPerPage(3); // large screens
+            }
+        };
+
+        updateItemsPerPage();
+        window.addEventListener("resize", updateItemsPerPage);
+        return () => window.removeEventListener("resize", updateItemsPerPage);
+    }, []);
 
     useEffect(() => {
         const fetchFeedbacks = async () => {
             try {
                 const response = await fetch('/api/feedback');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch feedbacks');
-                }
+                if (!response.ok) throw new Error('Failed to fetch feedbacks');
                 const data = await response.json();
                 setFeedbacks(data.feedbacks);
             } catch (error) {
@@ -34,9 +51,7 @@ export default function FeedbackSection() {
         fetchFeedbacks();
     }, []);
 
-    if (feedbacks.length === 0) {
-        return null;
-    }
+    if (feedbacks.length === 0) return null;
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) =>
@@ -57,7 +72,7 @@ export default function FeedbackSection() {
     return (
         <section className="py-20 px-4 sm:px-6 bg-[#FAFAF8]">
             <div className="max-w-7xl mx-auto">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -85,18 +100,24 @@ export default function FeedbackSection() {
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: -50 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                                        className="w-full md:w-1/3 bg-white rounded-2xl  overflow-hidden border border-earth-green/10"
+                                        className={`w-full ${
+                                            itemsPerPage === 3
+                                                ? 'md:w-1/3'
+                                                : itemsPerPage === 2
+                                                ? 'sm:w-1/2'
+                                                : 'w-full'
+                                        } bg-white rounded-2xl overflow-hidden border border-earth-green/10`}
                                     >
                                         <div className="p-6 sm:p-8">
                                             <div className="mb-6">
                                                 <Quote className="w-10 h-10 text-earth-green/20" />
                                             </div>
                                             <div className="flex items-center gap-1 mb-4">
-                                                {[...Array(5)].map((_, index) => (
+                                                {[...Array(5)].map((_, i) => (
                                                     <Star
-                                                        key={index}
+                                                        key={i}
                                                         className={`w-5 h-5 ${
-                                                            index < feedback.rating
+                                                            i < feedback.rating
                                                                 ? 'text-sunrise-gold fill-sunrise-gold'
                                                                 : 'text-slate-200'
                                                         }`}
@@ -106,13 +127,24 @@ export default function FeedbackSection() {
                                             <p className="text-slate-600 mb-6 line-clamp-4">
                                                 {feedback.feedback}
                                             </p>
-                                            <div className="pt-6 border-t border-slate-100">
-                                                <p className="font-playfair font-semibold text-dark">
-                                                    {feedback.name}
-                                                </p>
-                                                <p className="text-sm text-slate-500">
-                                                    {new Date(feedback.createdAt).toLocaleDateString()}
-                                                </p>
+                                            <div className="pt-6 border-t border-slate-100 flex items-center gap-4">
+                                                <div className="w-12 h-12 rounded-full overflow-hidden">
+                                                    <Image 
+                                                        src={feedback.photo} 
+                                                        alt={`${feedback.name}'s photo`}
+                                                        width={48}
+                                                        height={48}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <p className="font-playfair font-semibold text-dark">
+                                                        {feedback.name}
+                                                    </p>
+                                                    <p className="text-sm text-slate-500">
+                                                        {new Date(feedback.createdAt).toLocaleDateString()}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </motion.div>

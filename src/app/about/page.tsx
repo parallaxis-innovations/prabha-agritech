@@ -99,7 +99,7 @@ export default function AboutPage() {
                             </h2>
                             <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                                 <p>
-                                    PRABHA (Rising Sun) began with a simple yet powerful belief: that farming deserves the same respect, innovation, and prosperity as any other profession.
+                                    PRABHA means Rising Sun, began with a simple yet powerful belief: that farming deserves the same respect, innovation, and prosperity as any other profession.
                                 </p>
                                 <p>
                                     We witnessed the disconnect between India's agricultural heritage and modern market demands. Farmers, the backbone of our nation, were often left behind in the race toward progress.
@@ -136,11 +136,9 @@ export default function AboutPage() {
             <div className="py-24 bg-gradient-to-b from-slate-50 to-white">
                 <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 xl:px-0">
                     <div
-                        className="grid md:grid-cols-2 gap-8"
-
-                    >
+                        className="grid md:grid-cols-2 gap-8">
                         <div
-                            className="bg-gradient-to-br from-primary to-primary/80 text-black p-12 rounded-3xl relative overflow-hidden group"
+                            className="bg-gradient-to-br from-primary to-primary/80 text-black lg:p-12 p-4 rounded-3xl relative overflow-hidden group"
 
                         >
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32 group-hover:scale-150 transition-transform duration-700" />
@@ -153,7 +151,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div
-                            className="bg-gradient-to-br from-secondary to-secondary/80 text-black p-12 rounded-3xl relative overflow-hidden group"
+                            className="bg-gradient-to-br from-secondary to-secondary/80 text-black lg:p-12 p-4 rounded-3xl relative overflow-hidden group"
 
                         >
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32 group-hover:scale-150 transition-transform duration-700" />
@@ -188,7 +186,7 @@ export default function AboutPage() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="md:col-span-3 p-12 md:p-16 flex flex-col justify-center">
+                            <div className="md:col-span-3 p-8 md:p-16 lg:p-16 flex flex-col justify-center">
                                 <p className="text-sm tracking-[0.2em] uppercase text-primary mb-4">Meet Our CEO</p>
                                 <h2 className="text-4xl md:text-5xl font-serif mb-4 text-slate-900">Bharat Soni</h2>
                                 <p className="text-xl text-primary mb-8 font-medium">Champion for Farmer-Led Innovation</p>
