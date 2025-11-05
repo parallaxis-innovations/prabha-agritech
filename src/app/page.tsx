@@ -1,7 +1,6 @@
 "use client";
 import HeroSection from '../components/HeroSection';
-import ServiceCard from '../components/ServiceCard';
-import ServicesCarousel from '../components/ServicesCarousel';
+import PillarStackedCards from '@/components/PillarStackedCards';
 import PrabhaTree from '../components/PrabhaTree';
 import Partners from '../components/Partners';
 import { motion } from 'framer-motion';
@@ -92,7 +91,7 @@ export default function Home() {
       <Partners />
 
       {/* Key Divisions Section */}
-      <section className="py-10 lg:py-12 md:py-10 px-4 sm:px-6 lg:px-12">
+      {/* <section className="py-10 lg:py-12 md:py-10 px-4 sm:px-6 lg:px-12">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -106,12 +105,16 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="overflow-hidden px-4 sm:px-6">
-             <div className="flex gap-6 sm:gap-8">
-            <ServicesCarousel divisions={divisions} />
-             </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {divisions.map((division, idx) => (
+              <ServiceCard key={division.title} {...division} delay={idx * 0.1} />
+            ))}
           </div>
         </div>
+      </section> */}
+
+      <section>
+        <PillarStackedCards divisions={divisions} />
       </section>
 
       {/* Impact Metrics */}
