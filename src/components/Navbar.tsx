@@ -34,19 +34,17 @@ export default function Navbar() {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled || menuOpen
             ? "bg-white/95 backdrop-blur-md shadow-sm py-2"
             : "bg-transparent py-3"
         }`}
       >
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="w-full mx-auto px-4 sm:px-6 lg:py-4 py-2 lg:px-12"
-        >
+        <div className="w-full mx-auto px-4 sm:px-6 lg:py-4 py-2 lg:px-12">
           <div className="max-w-7xl mx-auto flex items-center justify-between lg:justify-center lg:relative">
             
             {/* Desktop Layout */}
@@ -78,7 +76,7 @@ export default function Navbar() {
                 alt="PRABHA Agritech Logo"
                 width={120}
                 height={60}
-                className="w-[100px] h-auto sm:w-[120px] lg:w-[200px] transition-all duration-300 cursor-pointer"
+                className="w-[120px] h-auto lg:w-[200px] transition-all duration-300 cursor-pointer"
               />
             </Link>
 
@@ -130,8 +128,8 @@ export default function Navbar() {
             </button>
 
           </div>
-        </motion.div>
-      </header>
+        </div>
+      </motion.header>
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
