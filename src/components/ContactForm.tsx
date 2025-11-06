@@ -77,6 +77,13 @@ export default function ContactForm() {
                     })}
                     type='tel'
                     placeholder="+91 XXXXX XXXXX"
+                    onKeyPress={(e) => {
+                        const isNumber = /[0-9]/.test(e.key);
+                        const isBackspace = e.key === 'Backspace';
+                        if (!isNumber && !isBackspace) {
+                            e.preventDefault();
+                        }
+                    }}
                     className={`w-full px-4 py-3 rounded-xl border ${errors.phone ? 'border-red-300 bg-red-50' : 'border-slate-200'} focus:border-earth-green focus:ring-2 focus:ring-earth-green/20 outline-none transition-all`}
                 />
                 {errors.phone && (
