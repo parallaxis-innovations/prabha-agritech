@@ -14,13 +14,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [menuOpen]);
-
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
@@ -29,155 +22,139 @@ export default function Navbar() {
     { href: "/blog", label: "Blog" },
   ];
 
-  const commonLinkClasses =
-    "relative text-lg font-medium tracking-wide transition-colors";
+  const textClasses = "relative text-base lg:text-lg font-medium transition-all";
 
   return (
     <>
+      {/* NAVBAR WRAPPER */}
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || menuOpen
-            ? "bg-white/95 backdrop-blur-md shadow-sm py-2"
-            : "bg-transparent py-3"
+          scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "py-3"
         }`}
       >
-        <div className="w-full mx-auto px-4 sm:px-6 lg:py-4 py-2 lg:px-12">
-          <div className="max-w-7xl mx-auto flex items-center justify-between lg:justify-center lg:relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between lg:justify-center relative">
             
-            {/* Desktop Layout */}
-            <nav className="hidden lg:flex items-center gap-8 lg:absolute lg:left-0">
-              {navLinks.slice(0, 2).map((link) => (
+            {/* LEFT MENU — Desktop from 1024px */}
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-8 absolute left-0">
+              {navLinks.slice(0, 2).map((item) => (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`${commonLinkClasses} group ${
+                  key={item.href}
+                  href={item.href}
+                  className={`${textClasses} ${
                     scrolled ? "text-dark" : "text-white"
-                  }`}
+                  } group`}
                 >
-                  {link.label}
-                  <span
-                    className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-earth-green group-hover:w-full group-hover:left-0 transition-all duration-300"
-                  />
+                  {item.label}
+                  <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-earth-green transition-all group-hover:w-full group-hover:left-0"></span>
                 </Link>
               ))}
             </nav>
 
-            {/* Logo Center */}
-            <Link href="/" className="flex items-center flex-shrink-0">
+            {/* LOGO – auto shrink at tighter screens */}
+            <Link href="/" className="flex-shrink-0">
               <Image
-                src={
-                  scrolled || menuOpen
-                    ? "/logo/logo_dark.png"
-                    : "/logo/logo_light.png"
-                }
-                alt="PRABHA Agritech Logo"
-                width={120}
+                src={scrolled ? "/logo/logo_dark.png" : "/logo/logo_light.png"}
+                alt="Logo"
+                width={180}
                 height={60}
-                className="w-[120px] h-auto lg:w-[200px] transition-all duration-300 cursor-pointer"
+                className="
+                  h-auto
+                  w-[110px]
+                  sm:w-[130px]
+                  lg:w-[150px]
+                  xl:w-[190px]
+                  transition-all
+                "
               />
             </Link>
 
-            {/* Right Nav */}
-            <div className="hidden lg:flex items-center gap-8 lg:absolute lg:right-0">
-              {navLinks.slice(2).map((link) => (
+            {/* RIGHT MENU — Desktop from 1024px */}
+            <div className="hidden lg:flex items-center gap-4 xl:gap-8 absolute right-0">
+              {navLinks.slice(2).map((item) => (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`${commonLinkClasses} group ${
+                  key={item.href}
+                  href={item.href}
+                  className={`${textClasses} ${
                     scrolled ? "text-dark" : "text-white"
-                  }`}
+                  } group`}
                 >
-                  {link.label}
-                  <span
-                    className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-earth-green group-hover:w-full group-hover:left-0 transition-all duration-300"
-                  />
+                  {item.label}
+                  <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-earth-green transition-all group-hover:w-full group-hover:left-0"></span>
                 </Link>
               ))}
               <Link
                 href="/contact"
-                className={`px-6 py-2.5 rounded-full text-lg font-medium transition-all hover:scale-105 ${
+                className={`px-4 lg:px-5 py-2 rounded-full text-sm lg:text-base font-medium ${
                   scrolled
                     ? "bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark"
-                    : "bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white hover:text-dark"
+                    : "bg-white/20 text-white border border-white/30 hover:bg-white hover:text-dark"
                 }`}
               >
                 Get in Touch
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* MOBILE MENU BUTTON — Only <1024px */}
             <button
-              className={`lg:hidden p-2 transition-colors z-[60] flex-shrink-0 ${
-                scrolled || menuOpen ? "text-dark" : "text-white"
+              className={`lg:hidden p-2 z-[60] ${
+                scrolled ? "text-dark" : "text-white"
               }`}
-              aria-label="Menu"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? (
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="26" height="26" stroke="currentColor" strokeWidth="2">
                   <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
               ) : (
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="26" height="26" stroke="currentColor" strokeWidth="2">
                   <path d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
-
           </div>
         </div>
       </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* MOBILE BACKDROP */}
       {menuOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
 
-      {/* Mobile Menu Panel */}
-      <motion.nav
+      {/* MOBILE PANEL */}
+      <motion.div
         initial={{ x: "100%" }}
         animate={{ x: menuOpen ? 0 : "100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 p-8 flex flex-col gap-6 lg:hidden overflow-y-auto"
+        className="fixed top-0 right-0 h-full w-64 bg-white p-8 z-50 lg:hidden"
       >
-        <div className="flex justify-end mb-8">
-          <button
-            className="text-2xl text-dark"
-            aria-label="Close menu"
-            onClick={() => setMenuOpen(false)}
-          >
-            &times;
-          </button>
-        </div>
-
-        {navLinks.map((link) => (
+        {navLinks.map((item) => (
           <Link
-            key={link.href}
-            href={link.href}
-            className="text-base sm:text-lg font-medium text-dark py-2 px-2 rounded hover:bg-earth-green hover:text-white transition-colors"
+            key={item.href}
+            href={item.href}
+            className="block py-3 text-lg font-medium text-dark"
             onClick={() => setMenuOpen(false)}
           >
-            {link.label}
+            {item.label}
           </Link>
         ))}
 
         <Link
           href="/contact"
-          className="mt-4 px-6 py-2.5 rounded-full text-lg font-medium bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark transition-all text-center"
+          className="mt-5 block text-center bg-earth-green text-white py-2.5 rounded-full"
           onClick={() => setMenuOpen(false)}
         >
           Get in Touch
         </Link>
-      </motion.nav>
+      </motion.div>
     </>
   );
 }

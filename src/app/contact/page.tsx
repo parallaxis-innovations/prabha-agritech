@@ -14,7 +14,7 @@ export default function ContactPage() {
                         Get in Touch
                     </h1>
                     <p className="text-sm sm:text-base md:text-lg text-white leading-relaxed">
-                        Have questions or want to collaborate? We're here to help you with your agricultural technology needs.
+                        Have questions or want to collaborate? We&apos;re here to help you with your agricultural technology needs.
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@ export default function ContactPage() {
                                             </div>
                                             <div>
                                                 <h3 className="font-semibold text-dark text-sm sm:text-base">Email</h3>
-                                                <p className="text-slate-600 mt-1 text-sm sm:text-base">bharatswarnkar@gmail.com</p>
+                                                <p className="text-slate-600 mt-1 text-sm sm:text-base">prabhaagritech2@gmail.com</p>
                                             </div>
                                         </div>
                                     </div>
