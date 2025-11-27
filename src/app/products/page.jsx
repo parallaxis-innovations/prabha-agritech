@@ -27,7 +27,7 @@ const products = [
 			"https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
 	},
 	{
-		title: "Smart Technology",
+		title: "Smart Agri Technology",
 		image:
 			"/image/services/technology.png",
 	},
