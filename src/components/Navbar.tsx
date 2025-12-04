@@ -36,10 +36,12 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between lg:justify-center relative">
+          
+          {/* FLEX CENTERED LAYOUT — FIXED */}
+          <div className="flex items-center justify-between relative w-full">
             
-            {/* LEFT MENU — Desktop from 1024px */}
-            <nav className="hidden lg:flex items-center gap-4 xl:gap-8 absolute left-0">
+            {/* LEFT MENU — Only Desktop */}
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navLinks.slice(0, 2).map((item) => (
                 <Link
                   key={item.href}
@@ -54,26 +56,28 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* LOGO – auto shrink at tighter screens */}
-            <Link href="/" className="flex-shrink-0">
-              <Image
-                src={scrolled ? "/logo/logo_dark.png" : "/logo/logo_light.png"}
-                alt="Logo"
-                width={180}
-                height={60}
-                className="
-                  h-auto
-                  w-[110px]
-                  sm:w-[130px]
-                  lg:w-[150px]
-                  xl:w-[190px]
-                  transition-all
-                "
-              />
-            </Link>
+            {/* LOGO (Centered) */}
+            <div className="flex justify-center flex-1 lg:flex-none">
+              <Link href="/" className="flex-shrink-0">
+                <Image
+                  src={scrolled ? "/logo/logo_dark.png" : "/logo/logo_light.png"}
+                  alt="Logo"
+                  width={180}
+                  height={60}
+                  className="
+                    h-auto
+                    w-[110px]
+                    sm:w-[130px]
+                    lg:w-[150px]
+                    xl:w-[190px]
+                    transition-all
+                  "
+                />
+              </Link>
+            </div>
 
-            {/* RIGHT MENU — Desktop from 1024px */}
-            <div className="hidden lg:flex items-center gap-4 xl:gap-8 absolute right-0">
+            {/* RIGHT MENU — Desktop */}
+            <div className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navLinks.slice(2).map((item) => (
                 <Link
                   key={item.href}
@@ -86,6 +90,7 @@ export default function Navbar() {
                   <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-earth-green transition-all group-hover:w-full group-hover:left-0"></span>
                 </Link>
               ))}
+
               <Link
                 href="/contact"
                 className={`px-4 lg:px-5 py-2 rounded-full text-sm lg:text-base font-medium ${
@@ -98,7 +103,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* MOBILE MENU BUTTON — Only <1024px */}
+            {/* MOBILE MENU BUTTON */}
             <button
               className={`lg:hidden p-2 z-[60] ${
                 scrolled ? "text-dark" : "text-white"
