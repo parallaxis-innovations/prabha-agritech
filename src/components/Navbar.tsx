@@ -26,21 +26,21 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR WRAPPER */}
+      {/* NAVBAR WRAPPER (Fixed Height – Prevents Hiding Issues) */}
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-2" : "py-3"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[78px] ${
+          scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full">
           
-          {/* FLEX CENTERED LAYOUT — FIXED */}
-          <div className="flex items-center justify-between relative w-full">
+          {/* FLEX CENTER LAYOUT */}
+          <div className="flex items-center justify-between relative w-full h-full">
             
-            {/* LEFT MENU — Only Desktop */}
+            {/* LEFT MENU (Desktop Only) */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navLinks.slice(0, 2).map((item) => (
                 <Link
@@ -56,7 +56,7 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* LOGO (Centered) */}
+            {/* LOGO (Perfectly Centered) */}
             <div className="flex justify-center flex-1 lg:flex-none">
               <Link href="/" className="flex-shrink-0">
                 <Image
@@ -76,7 +76,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* RIGHT MENU — Desktop */}
+            {/* RIGHT MENU (Desktop Only) */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navLinks.slice(2).map((item) => (
                 <Link
@@ -120,6 +120,7 @@ export default function Navbar() {
                 </svg>
               )}
             </button>
+
           </div>
         </div>
       </motion.header>
@@ -134,7 +135,7 @@ export default function Navbar() {
         />
       )}
 
-      {/* MOBILE PANEL */}
+      {/* MOBILE SLIDE PANEL */}
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: menuOpen ? 0 : "100%" }}

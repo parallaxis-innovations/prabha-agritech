@@ -14,7 +14,7 @@ const services = [
         desc: 'Advanced mushroom cultivation, R&D, and comprehensive training programs.',
         tagline: 'Growing nutrition, farming the future of nutritional protein',
         features: ['Mushroom Cultivation', 'R&D Programs', 'Training Workshops', 'Quality Control'],
-        image: '/image/services/mushroom.png',
+        image: '/image/services/mashroom.jpeg',
     },
     {
         id: 'prabha-hive',
