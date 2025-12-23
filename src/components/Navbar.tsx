@@ -32,45 +32,26 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 inset-x-0 z-50 h-[78px] overflow-x-hidden transition-all duration-500 ${
+        className={`fixed top-0 inset-x-0 z-50 h-[78px] w-full overflow-x-hidden transition-all duration-500 ${
           scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : ""
         }`}
       >
-        <div className="mx-auto max-w-7xl h-full px-4 sm:px-6">
-          {/* FLEX CONTAINER */}
-          <div className="relative flex h-full w-full min-w-0 items-center justify-between overflow-hidden">
-            {/* LEFT MENU (Desktop) */}
+        <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 overflow-hidden">
+          <div className="flex h-full w-full items-center justify-between min-w-0">
+            {/* LOGO — LEFT (ALL SCREENS) */}
+            <Link href="/" className="flex-shrink-0">
+              <Image
+                src={scrolled ? "/logo/logo_dark.png" : "/logo/logo_light.png"}
+                alt="Logo"
+                width={180}
+                height={60}
+                className="h-auto w-[120px] sm:w-[140px] lg:w-[160px] xl:w-[180px]"
+              />
+            </Link>
+
+            {/* NAV LINKS — RIGHT (DESKTOP ONLY) */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
-              {navLinks.slice(0, 2).map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`${textClasses} ${
-                    scrolled ? "text-dark" : "text-white"
-                  } group`}
-                >
-                  {item.label}
-                  <span className="absolute bottom-0 left-1/2 h-[2px] w-0 bg-earth-green transition-all group-hover:left-0 group-hover:w-full" />
-                </Link>
-              ))}
-            </nav>
-
-            {/* LOGO (FIXED) */}
-            <div className="flex justify-center w-full lg:w-auto">
-              <Link href="/" className="flex-shrink-0">
-                <Image
-                  src={scrolled ? "/logo/logo_dark.png" : "/logo/logo_light.png"}
-                  alt="Logo"
-                  width={180}
-                  height={60}
-                  className="h-auto w-[110px] sm:w-[130px] lg:w-[150px] xl:w-[190px] transition-all"
-                />
-              </Link>
-            </div>
-
-            {/* RIGHT MENU (Desktop) */}
-            <div className="hidden lg:flex items-center gap-6 xl:gap-10">
-              {navLinks.slice(2).map((item) => (
+              {navLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -93,9 +74,9 @@ export default function Navbar() {
               >
                 Get in Touch
               </Link>
-            </div>
+            </nav>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* MOBILE MENU BUTTON — RIGHT */}
             <button
               className={`lg:hidden shrink-0 p-2 z-[60] ${
                 scrolled ? "text-dark" : "text-white"
@@ -128,8 +109,8 @@ export default function Navbar() {
 
       {/* MOBILE SLIDE PANEL */}
       <motion.div
-        initial={{ x: "110%" }}
-        animate={{ x: menuOpen ? 0 : "110%" }}
+        initial={{ x: "120%" }}
+        animate={{ x: menuOpen ? 0 : "120%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className="fixed top-0 right-0 z-50 h-full w-64 max-w-[85vw] overflow-x-hidden bg-white p-8 lg:hidden"
       >
