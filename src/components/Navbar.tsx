@@ -22,25 +22,24 @@ export default function Navbar() {
     { href: "/blog", label: "Blog" },
   ];
 
-  const textClasses = "relative text-base lg:text-lg font-medium transition-all";
+  const textClasses =
+    "relative text-base lg:text-lg font-medium transition-all";
 
   return (
     <>
-      {/* NAVBAR WRAPPER (Fixed Height – Prevents Hiding Issues) */}
+      {/* NAVBAR */}
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-[78px] ${
+        className={`fixed top-0 inset-x-0 z-50 h-[78px] overflow-x-hidden transition-all duration-500 ${
           scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full">
-          
-          {/* FLEX CENTER LAYOUT */}
-          <div className="flex items-center justify-between relative w-full h-full">
-            
-            {/* LEFT MENU (Desktop Only) */}
+        <div className="mx-auto max-w-7xl h-full px-4 sm:px-6">
+          {/* FLEX CONTAINER */}
+          <div className="relative flex h-full w-full min-w-0 items-center justify-between overflow-hidden">
+            {/* LEFT MENU (Desktop) */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navLinks.slice(0, 2).map((item) => (
                 <Link
@@ -51,32 +50,25 @@ export default function Navbar() {
                   } group`}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-earth-green transition-all group-hover:w-full group-hover:left-0"></span>
+                  <span className="absolute bottom-0 left-1/2 h-[2px] w-0 bg-earth-green transition-all group-hover:left-0 group-hover:w-full" />
                 </Link>
               ))}
             </nav>
 
-            {/* LOGO (Perfectly Centered) */}
-            <div className="flex justify-center flex-1 lg:flex-none">
+            {/* LOGO (FIXED) */}
+            <div className="flex justify-center w-full lg:w-auto">
               <Link href="/" className="flex-shrink-0">
                 <Image
                   src={scrolled ? "/logo/logo_dark.png" : "/logo/logo_light.png"}
                   alt="Logo"
                   width={180}
                   height={60}
-                  className="
-                    h-auto
-                    w-[110px]
-                    sm:w-[130px]
-                    lg:w-[150px]
-                    xl:w-[190px]
-                    transition-all
-                  "
+                  className="h-auto w-[110px] sm:w-[130px] lg:w-[150px] xl:w-[190px] transition-all"
                 />
               </Link>
             </div>
 
-            {/* RIGHT MENU (Desktop Only) */}
+            {/* RIGHT MENU (Desktop) */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navLinks.slice(2).map((item) => (
                 <Link
@@ -87,16 +79,16 @@ export default function Navbar() {
                   } group`}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-earth-green transition-all group-hover:w-full group-hover:left-0"></span>
+                  <span className="absolute bottom-0 left-1/2 h-[2px] w-0 bg-earth-green transition-all group-hover:left-0 group-hover:w-full" />
                 </Link>
               ))}
 
               <Link
                 href="/contact"
-                className={`px-4 lg:px-5 py-2 rounded-full text-sm lg:text-base font-medium ${
+                className={`rounded-full px-4 py-2 text-sm font-medium lg:px-5 lg:text-base ${
                   scrolled
                     ? "bg-earth-green text-white hover:bg-sunrise-gold hover:text-dark"
-                    : "bg-white/20 text-white border border-white/30 hover:bg-white hover:text-dark"
+                    : "border border-white/30 bg-white/20 text-white hover:bg-white hover:text-dark"
                 }`}
               >
                 Get in Touch
@@ -105,7 +97,7 @@ export default function Navbar() {
 
             {/* MOBILE MENU BUTTON */}
             <button
-              className={`lg:hidden p-2 z-[60] ${
+              className={`lg:hidden shrink-0 p-2 z-[60] ${
                 scrolled ? "text-dark" : "text-white"
               }`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -120,7 +112,6 @@ export default function Navbar() {
                 </svg>
               )}
             </button>
-
           </div>
         </div>
       </motion.header>
@@ -130,17 +121,17 @@ export default function Navbar() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          className="fixed inset-0 z-40 bg-black/40 lg:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
 
       {/* MOBILE SLIDE PANEL */}
       <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: menuOpen ? 0 : "100%" }}
+        initial={{ x: "110%" }}
+        animate={{ x: menuOpen ? 0 : "110%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="fixed top-0 right-0 h-full w-64 bg-white p-8 z-50 lg:hidden"
+        className="fixed top-0 right-0 z-50 h-full w-64 max-w-[85vw] overflow-x-hidden bg-white p-8 lg:hidden"
       >
         {navLinks.map((item) => (
           <Link
@@ -155,7 +146,7 @@ export default function Navbar() {
 
         <Link
           href="/contact"
-          className="mt-5 block text-center bg-earth-green text-white py-2.5 rounded-full"
+          className="mt-5 block rounded-full bg-earth-green py-2.5 text-center text-white"
           onClick={() => setMenuOpen(false)}
         >
           Get in Touch
